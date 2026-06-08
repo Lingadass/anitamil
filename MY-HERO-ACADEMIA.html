@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Hero Academia Tamil Dubbed — Watch All 8 Seasons Free | αηιмєѕ தமிழ்</title>
+  <meta name="description" content="Watch My Hero Academia (Boku no Hero Academia) in Tamil on αηιмєѕ தமிழ். All 170 episodes across 8 seasons — Season 1 to Final Season — free Tamil dubbed streaming and download. Watch Deku's journey to become the greatest hero!" />
+  <meta name="keywords" content="My Hero Academia Tamil, Boku no Hero Academia Tamil dubbed, MHA Tamil dub watch online, My Hero Academia Season 1 Tamil, My Hero Academia Season 6 Tamil, My Hero Academia Final Season Tamil, Deku Tamil dubbed, anime Tamil dubbed free, MHA Tamil free download, αηιмєѕ தமிழ்" />
+  <meta property="og:title" content="My Hero Academia Tamil Dubbed — Watch All 8 Seasons Free | αηιмєѕ தமிழ்" />
+  <meta property="og:description" content="Stream or download My Hero Academia all 8 seasons in Tamil Dub — 170 episodes completely free on αηιмєѕ தமிழ். Deku's full journey from Season 1 to the Final Season!" />
+  <meta property="og:image" content="https://ani-tamil.me/MHA.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ani-tamil.me/MY-HERO-ACADEMIA.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="My Hero Academia Tamil Dubbed — αηιмєѕ தமிழ்" />
+  <meta name="twitter:description" content="Watch My Hero Academia all 8 seasons in Tamil — 170 episodes free on αηιмєѕ தமிழ்." />
+  <meta name="twitter:image" content="https://ani-tamil.me/MHA.jpg" />
+  <link rel="canonical" href="https://ani-tamil.me/MY-HERO-ACADEMIA.html" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="anime-style.css" />
+  <style>
+    /* ── Video Player (native <video>) ── */
+    .video-wrap { background: #000; position: relative; flex: 1; display: flex; flex-direction: column; }
+    .video-player {
+      width: 100%; height: 100%;
+      background: #000;
+      display: block;
+      flex: 1;
+      min-height: 0;
+    }
+    /* Controls bar extras */
+    .ctrl-download {
+      display: flex; align-items: center; gap: 6px;
+      height: 36px; padding: 0 14px;
+      border-radius: 99px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: #fff; font-size: 0.8rem; font-weight: 600;
+      text-decoration: none;
+      transition: all 0.22s;
+    }
+    .ctrl-download:hover { background: rgba(46,213,115,0.25); border-color: #2ed573; color: #2ed573; }
+    /* Episode card download btn */
+    .ep-card { position: relative; }
+    .ep-dl-btn {
+      position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+      width: 30px; height: 30px; border-radius: 50%;
+      background: rgba(46,213,115,0.15);
+      border: 1px solid rgba(46,213,115,0.4);
+      color: #2ed573;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; text-decoration: none;
+      opacity: 0; transition: opacity 0.2s, background 0.2s;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+    .ep-card:hover .ep-dl-btn { opacity: 1; }
+    .ep-dl-btn:hover { background: rgba(46,213,115,0.3); }
+    /* Mobile: always show download */
+    @media (max-width: 768px) { .ep-dl-btn { opacity: 1; } }
+    /* No-src badge */
+    .ep-no-src { opacity: 0.45; }
+    .ep-badge-soon {
+      font-size: 0.62rem; font-weight: 700; padding: 2px 7px;
+      background: rgba(244,162,97,0.15); color: #f4a261;
+      border-radius: 99px; margin-left: 6px; vertical-align: middle;
+    }
+    /* Video error state */
+    .video-error {
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      gap: 14px; position: absolute; inset: 0;
+      background: #000; color: rgba(255,255,255,0.7); font-size: 0.88rem; text-align: center; padding: 24px;
+    }
+    .video-error .err-icon { font-size: 2.8rem; }
+    .video-error a {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 99px;
+      background: #e63946; color: #fff; font-weight: 700; font-size: 0.82rem;
+      text-decoration: none; margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ── -->
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo-emoji">⚔️</div>
+    <div class="nav-title">αηιмєѕ தமிழ்<span>Tamil Anime Hub</span></div>
+  </a>
+  <div class="nav-spacer"></div>
+  <div class="nav-actions">
+    <a href="home.html" class="nav-btn home-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <span>Browse</span>
+    </a>
+    <button class="nav-btn" id="openShareNav">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      <span>Share</span>
+    </button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+<!-- ── Anime Hero ── -->
+<div class="anime-hero">
+  <div class="anime-hero-bg">
+    <img src="MHA.jpg" alt="" aria-hidden="true" onerror="this.style.display='none'" class="anime-hero-backdrop"/>
+    <div class="anime-hero-overlay"></div>
+  </div>
+  <div class="container anime-hero-content">
+    <div class="anime-poster-wrap fade-up">
+      <img src="MHA.jpg" alt="My Hero Academia Tamil Dubbed poster — watch all 8 seasons free on αηιмєѕ தமிழ்" class="anime-poster"
+        onerror="this.src='https://placehold.co/240x360/1e1e24/e63946?text=My+Hero+Academia'"/>
+    </div>
+    <div class="anime-info fade-up delay-1">
+      <div class="anime-badges">
+        <span class="badge badge-red">🎙️ Tamil Dubbed</span>
+        <span class="badge badge-gold">⭐ 8.4 / 10</span>
+        <span class="badge badge-green">✅ Completed</span>
+      </div>
+      <h1 class="anime-title">My Hero Academia</h1>
+      <p class="anime-native">僕のヒーローアカデミア · Boku no Hīrō Akademia</p>
+      <div class="anime-meta-row">
+        <span class="anime-meta-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          2016
+        </span>
+        <span class="anime-meta-dot">·</span>
+        <span class="anime-meta-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          8 Seasons
+        </span>
+        <span class="anime-meta-dot">·</span>
+        <span class="anime-meta-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          170 Episodes
+        </span>
+        <span class="anime-meta-dot">·</span>
+        <span class="anime-meta-item">Action · Superhero · Adventure</span>
+      </div>
+      <p class="anime-desc">
+        In a world where 80% of the population has superpowers called Quirks, Izuku Midoriya is born
+        without any ability at all. Despite this, he dreams of becoming the world's greatest hero. After
+        a fateful encounter with the legendary All Might, Izuku inherits the most powerful Quirk —
+        One For All — and enrols in U.A. High School, Japan's premier academy for aspiring heroes.
+        Follow Deku's incredible journey from zero to hero across 8 action-packed seasons.
+      </p>
+      <div class="anime-action-row">
+        <button class="btn-watch" id="watchFirstBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch Episode 1
+        </button>
+        <a class="btn-watch" id="downloadFirstBtn" style="background:rgba(46,213,115,0.2);color:#2ed573;border:1.5px solid #2ed573;box-shadow:none;" href="#" download>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Ep 1
+        </a>
+        <button class="btn-icon" id="openShareHero" title="Share">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Episode Sections ── -->
+<main class="anime-main">
+  <div class="container">
+    <div class="season-switcher" id="seasonSwitcher">
+      <button class="season-tab-btn active" data-season="1">Season 1</button>
+      <button class="season-tab-btn" data-season="2">Season 2</button>
+      <button class="season-tab-btn" data-season="3">Season 3</button>
+      <button class="season-tab-btn" data-season="4">Season 4</button>
+      <button class="season-tab-btn" data-season="5">Season 5</button>
+      <button class="season-tab-btn" data-season="6">Season 6</button>
+      <button class="season-tab-btn" data-season="7">Season 7</button>
+      <button class="season-tab-btn" data-season="8">Season 8</button>
+    </div>
+
+    <!-- Season 1 -->
+    <div class="season-panel active" id="season-panel-1">
+      <div class="season-panel-header">
+        <div>
+          <h2 class="season-panel-title">Season 1</h2>
+          <p class="season-panel-meta">13 Episodes · 2016 · Tamil Dubbed</p>
+        </div>
+        <div class="ep-search-wrap">
+          <input type="text" class="ep-search" placeholder="Search episode..." id="epSearch1" />
+        </div>
+      </div>
+      <div class="ep-grid" id="epGrid1"></div>
+    </div>
+
+    <!-- Season 2 -->
+    <div class="season-panel" id="season-panel-2">
+      <div class="season-panel-header">
+        <div>
+          <h2 class="season-panel-title">Season 2 — U.A. Sports Festival</h2>
+          <p class="season-panel-meta">25 Episodes · 2017 · Tamil Dubbed</p>
+        </div>
+        <div class="ep-search-wrap">
+          <input type="text" class="ep-search" placeholder="Search episode..." id="epSearch2" />
+        </div>
+      </div>
+      <div class="ep-grid" id="epGrid2"></div>
+    </div>
+
+    <!-- Season 3 -->
+    <div class="season-panel" id="season-panel-3">
+      <div class="season-panel-header">
+        <div>
+          <h2 class="season-panel-title">Season 3 — Forest Training Camp</h2>
+          <p class="season-panel-meta">25 Episodes · 2018 · Tamil Dubbed</p>
+        </div>
+        <div class="ep-search-wrap">
+          <input type="text" class="ep-search" placeholder="Search episode..." id="epSearch3" />
+        </div>
+      </div>
+      <div class="ep-grid" id="epGrid3"></div>
+    </div>
+
+    <!-- Season 4 -->
+    <div class="season-panel" id="season-panel-4">
+      <div class="season-panel-header">
+        <div>
+          <h2 class="season-panel-title">Season 4 — Shie Hassaikai</h2>
+          <p class="season-panel-meta">25 Episodes · 2019 · Tamil Dubbed</p>
+        </div>
+        <div class="ep-search-wrap">
+          <input type="text" class="ep-search" placeholder="Search episode..." id="epSearch4" />
+        </div>
+      </div>
+      <div class="ep-grid" id="epGrid4"></div>
+    </div>
+
+    <!-- Season 5 -->
+    <div class="season-panel" id="season-panel-5">
+      <div class="season-panel-header">
+        <div>
+          <h2 class="season-panel-title">Season 5 — Joint Training</h2>
+          <p class="season-panel-meta">25 Episodes · 2021 · Tamil Dubbed</p>
+        </div>
+        <div class="ep-search-wrap">
+          <input type="text" class="ep-search" placeholder="Search episode..." id="epSearch5" />
+        </div>
+      </div>
+      <div class="ep-grid" id="epGrid5"></div>
+    </div>
+
+    <!-- Season 6 -->
+    <div class="season-panel" id="season-panel-6">
+      <div class="season-panel-header">
+        <div>
+          <h2 class="season-panel-title">Season 6 — Paranormal Liberation War</h2>
+          <p class="season-panel-meta">25 Episodes · 2022 · Tamil Dubbed</p>
+        </div>
+        <div class="ep-search-wrap">
+          <input type="text" class="ep-search" placeholder="Search episode..." id="epSearch6" />
+        </div>
+      </div>
+      <div class="ep-grid" id="epGrid6"></div>
+    </div>
+
+    <!-- Season 7 -->
+    <div class="season-panel" id="season-panel-7">
+      <div class="season-panel-header">
+        <div>
+          <h2 class="season-panel-title">Season 7 — Final War</h2>
+          <p class="season-panel-meta">21 Episodes · 2024 · Tamil Dubbed</p>
+        </div>
+        <div class="ep-search-wrap">
+          <input type="text" class="ep-search" placeholder="Search episode..." id="epSearch7" />
+        </div>
+      </div>
+      <div class="ep-grid" id="epGrid7"></div>
+    </div>
+
+    <!-- Season 8 -->
+    <div class="season-panel" id="season-panel-8">
+      <div class="season-panel-header">
+        <div>
+          <h2 class="season-panel-title">Season 8 — Final Season</h2>
+          <p class="season-panel-meta">11 Episodes · 2025 · Tamil Dubbed</p>
+        </div>
+        <div class="ep-search-wrap">
+          <input type="text" class="ep-search" placeholder="Search episode..." id="epSearch8" />
+        </div>
+      </div>
+      <div class="ep-grid" id="epGrid8"></div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-brand">αηιмєѕ தமிழ்</div>
+  <p class="footer-desc">Free Tamil anime streaming — dubbed & subbed. No ads, no subscriptions.</p>
+  <div class="footer-links">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="home.html" class="footer-link">Browse</a>
+  </div>
+  <div class="footer-copy">
+    © <span id="footerYear"></span> <span>αηιмєѕ தமிழ்</span>. All rights reserved.
+    My Hero Academia © Kōhei Horikoshi / Shueisha. Fan-made, non-commercial site.
+  </div>
+</footer>
+
+<!-- ── Video Modal ── -->
+<div class="video-modal" id="videoModal">
+  <div class="video-topbar">
+    <button class="video-close" id="videoClose" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="video-ep-info">
+      <p class="video-anime-name">My Hero Academia · Tamil Dub</p>
+      <p class="video-ep-name" id="videoEpName">Episode 1</p>
+    </div>
+    <div class="video-ep-counter" id="videoEpCounter">1 / 170</div>
+  </div>
+
+  <div class="video-wrap" id="videoWrap">
+    <!-- Loading spinner -->
+    <div class="video-loading" id="videoLoading">
+      <div class="spinner"></div>
+      <span>Loading episode...</span>
+    </div>
+    <!-- Error state -->
+    <div class="video-error" id="videoError">
+      <div class="err-icon">⚠️</div>
+      <p>Could not load this episode.<br/>Make sure the Google Drive file is set to <strong>Anyone with the link</strong>.</p>
+      <a id="errOpenDrive" href="#" target="_blank" rel="noopener">Open in Google Drive</a>
+    </div>
+    <!-- Native video player -->
+    <video id="videoPlayer" class="video-player" controls controlsList="nodownload" playsinline preload="none">
+      Your browser does not support the video tag.
+    </video>
+    <!-- Google Drive preview player -->
+    <iframe id="videoIframe" class="video-player" style="display:none; border:0;" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="video-controls">
+    <button class="video-nav-btn" id="btnPrev" disabled>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+      Prev
+    </button>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <a class="ctrl-download" id="btnDownload" href="#" download title="Download this episode">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </a>
+    </div>
+    <button class="video-nav-btn" id="btnNext">
+      Next
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2.5-6l5.5 4V8l-5.5 4zm7.5-6v12h2V6h-2z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ── Share Modal ── -->
+<div class="modal-overlay" id="shareModal" role="dialog">
+  <div class="share-sheet">
+    <div class="share-handle"></div>
+    <p class="share-title">Share My Hero Academia</p>
+    <div class="share-grid">
+      <button class="share-btn" onclick="shareWhatsApp()"><span class="share-icon">💬</span>WhatsApp</button>
+      <button class="share-btn" onclick="shareTelegram()"><span class="share-icon">✈️</span>Telegram</button>
+      <button class="share-btn" onclick="shareTwitter()"><span class="share-icon">🐦</span>Twitter</button>
+      <button class="share-btn" onclick="shareFacebook()"><span class="share-icon">👍</span>Facebook</button>
+      <button class="share-btn" onclick="shareReddit()"><span class="share-icon">🤖</span>Reddit</button>
+      <button class="share-btn" onclick="shareEmail()"><span class="share-icon">📧</span>Email</button>
+      <button class="share-btn" onclick="shareNative()"><span class="share-icon">📤</span>More</button>
+      <button class="share-btn" onclick="copyLink()"><span class="share-icon">🔗</span>Copy</button>
+    </div>
+    <div class="share-copy-row">
+      <span class="share-copy-url">https://ani-tamil.me/MY-HERO-ACADEMIA.html</span>
+      <button class="share-copy-btn" onclick="copyLink()">Copy Link</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Toast ── -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ================================================================
+   MY HERO ACADEMIA — Episode Data
+   Each episode has:
+     label : display label
+     title : episode title
+     id    : Google Drive FILE ID (just the ID, not full URL)
+   URLs are generated automatically:
+     Stream  → https://drive.google.com/file/d/ID/preview
+     Download→ https://drive.google.com/uc?export=download&id=ID
+   Episodes without an id show as "Coming Soon"
+   ================================================================ */
+const SEASONS = {
+  1: [
+    { label: 'Episode 1',  title: "Izuku Midoriya: Origin",                id: '1s_XxnMiemxA0gyvFveF-3DeJAa8tueMs' },
+    { label: 'Episode 2',  title: "What It Takes to Be a Hero",            id: '1USyVHEi7i4a8Z3mQYRk94hZKUICTULJc' },
+    { label: 'Episode 3',  title: "Roaring Muscles",                       id: '11fANRwJZf6pk6xZi5toc8jFmFwpWcpeL' },
+    { label: 'Episode 4',  title: "Start Line",                            id: '1IIiK2I640DLNAUzXuAhtq21rT1YcFqZB' },
+    { label: 'Episode 5',  title: "What I Can Do for Now",                 id: '1eBf5_cJpbtXF5GoLlVi6vKyyz2oKf2lJ' },
+    { label: 'Episode 6',  title: "Rage, You Damn Nerd",                   id: '139Pl7w7M4UIsWSeqr1m9Su0LGO2wL1ym' },
+    { label: 'Episode 7',  title: "Deku vs. Kacchan",                      id: '1MkomkgneNdgF5MHhlmXGqLkdAwVaDdND' },
+    { label: 'Episode 8',  title: "Bakugo's Start Line",                   id: '15cJF19HI91hh6TfrhAVxlFCGmPVEmrTe' },
+    { label: 'Episode 9',  title: "Yeah, Just Do Your Best, Iida!",        id: '1mrkeLhezO9kJULeaiqMnTojZg1k2T6CE' },
+    { label: 'Episode 10', title: "Encounter with the Unknown",            id: '1c2c-r8ZEqNecyWNySGJ8aoaW2SlKKTvb' },
+    { label: 'Episode 11', title: "Game Over",                             id: '1rS3FFVazlq-lX5wfdW3zprATDmwqt0a0' },
+    { label: 'Episode 12', title: "All Might",                             id: '1dM7bhX4s9dRnQD8BFjb50Ws6O-fVYeTH' },
+    { label: 'Episode 13', title: "In Each of Our Hearts",                 id: '1SLp9oljAyrNZw69EPrKzYWwUFpoiPMSe' },
+  ],
+  2: [
+    { label: 'Episode 1',  title: "That's the Idea, Ochaco",               id: '1XMF7UAmqQEA-zgDHS3jCCPc0u449i67p' },
+    { label: 'Episode 2',  title: "Roaring Sports Festival",               id: '1CtyxBpSlbmC3fvf9E_kuYx_ZROLh7lrE' },
+    { label: 'Episode 3',  title: "In Their Own Quirky Ways",              id: '1FD6_5BYDKBgKk1x6yIrdUYA_zw_sK3H8' },
+    { label: 'Episode 4',  title: "Strategy, Strategy, Strategy",          id: '15soqIQ-oAwRQ00785KpI9W7amb4WOhSi' },
+    { label: 'Episode 5',  title: "Cavalry Battle Finale",                 id: '1TdWg-bHFoX54aXvZHjj1iIZv4rgnEvlC' },
+    { label: 'Episode 6',  title: "The Boy Born with Everything",          id: '1A0pXMZX-rAkVPrkzIcwMsxklzhavNJ8Q' },
+    { label: 'Episode 7',  title: "Battle On, Challengers!",               id: '1fsBAIxJ9gkJ08wEo2DlZCQaJm1kQzVEg' },
+    { label: 'Episode 8',  title: "Bakugo vs. Uraraka",                    id: '1VBAAWTERuN1Aocdd5p_WfQwccAPWgaFA' },
+    { label: 'Episode 9',  title: "Shoto Todoroki: Origin",                id: '1rWFFtYvrqvpSyqvvjvOPpt4oM8YbOhdn' },
+    { label: 'Episode 10', title: "Victory or Defeat",                     id: '14V05wLyjuIS7FMPwq8DbEjqbOAdkLc7v' },
+    { label: 'Episode 11', title: "Battle Canceled",                       id: '1I9c7k5AwKaiKaJHcpPu-ALiqEuPg6uCh' },
+    { label: 'Episode 12', title: "Time to Pick Some Names",               id: '1HKSd9_wo4AE5JBuYfAWgVMsaNbJNaIz5' },
+    { label: 'Episode 13', title: "Internship",                            id: '18kuAmf0uCgb2U8fxeYiRA_LV8_ry3CYI' },
+    { label: 'Episode 14', title: "Bizarre! Gran Torino Appears",          id: '1DIAUaOtgo1OkHl0h1wz-_glhXiGcEWvo' },
+    { label: 'Episode 15', title: "Midoriya and Shigaraki",                id: '1J5mTKAT8ev_xzvQDvwoTMRBFYch3Sqrr' },
+    { label: 'Episode 16', title: "Hero Killer: Stain vs U.A. Students",   id: '1bjPpTymR3WzCHtzAlzOkjFRfCREgbL0C' },
+    { label: 'Episode 17', title: "Climax",                                id: '1iEb7bpb7guMGizBb3xJkNqx9Kwf9D76e' },
+    { label: 'Episode 18', title: "The Aftermath of Hero Killer: Stain",   id: '1u_Ow-6c0kb5MbBHiCf7xjTvDWxEg4GU9' },
+    { label: 'Episode 19', title: "Listen Up!! A Tale from the Past",      id: '1H5DOr-P0TxehlLOVg5dwcDbwDBvaxtr5' },
+    { label: 'Episode 20', title: "Moving into Dorms",                     id: '12si7OcMpryu-ZW4SFNimjWl_5HM1zjRu' },
+    { label: 'Episode 21', title: "My Hero",                               id: '1EjPOQlQ-y3uNzglqnXfXBGOuPElbDDXK' },
+    { label: 'Episode 22', title: "Stripping the Varnish",                 id: '1-ClXk_IIT59WkBCOv7DRweNFC7uCGqqW' },
+    { label: 'Episode 23', title: "Climb to the Top! All for One",         id: '16s86cHa1KMoayN9qaQQN3Wo_iGXhm5ah' },
+    { label: 'Episode 24', title: "A Season for Encounters",               id: '1_FxcMxdB471FcqBT6qJHfSROmZC7RzFb' },
+    { label: 'Episode 25', title: "Unrivaled",                             id: '1ACj0xMoTrjuK77UVN9PFZCSw-LWBGRBa' },
+  ],
+  3: [
+    { label: 'Episode 1',  title: "Game Start",                                 id: '19coxxAi-PPQnJn9v0YzTdEeS7ntVwo5U' },
+    { label: 'Episode 2',  title: "Wild, Wild Pussycats",                       id: '1MQGk3Ld5ZHoGpoao7MSBK8RpZZpgRx6o' },
+    { label: 'Episode 3',  title: "Kota",                                       id: '1VTHZENMjVGnhVq3ftxe4k9loMfdOWuxc' },
+    { label: 'Episode 4',  title: "My Hero",                                    id: '1mwWWkL3DFGC4MNws3aK2zRj2iCWdIEoR' },
+    { label: 'Episode 5',  title: "Drive It Home, Iron Fist!!!",                id: '1G_utlk2a9n83nbitAUv3tnmI1afA4JKh' },
+    { label: 'Episode 6',  title: "Roaring Upheaval",                           id: '1IX76QF-qs8CT38pCBUeqhGP-KTK_VFWt' },
+    { label: 'Episode 7',  title: "What a Twist!",                              id: '1uVTD4hP9-Rc12hOgUGm8_OEh_9mZBfWe' },
+    { label: 'Episode 8',  title: "From Ida to Midoriya",                       id: '1q1tzc_mRalt7RHsPWKG6wessKFutRKNM' },
+    { label: 'Episode 9',  title: "All for One",                                id: '1eT2lIQ9dK6XJQAKfF3yW5b0alPxmULoX' },
+    { label: 'Episode 10', title: "Symbol of Peace",                            id: '1-_qDSBfYTAPfwkObYp9YAqoqzHp1hFBH' },
+    { label: 'Episode 11', title: "One For All",                                id: '1m1oc-pVNeGMaBzUfkd3LatpLH9kSWz1e' },
+    { label: 'Episode 12', title: "End of the Beginning, Beginning of the End", id: '1GzxemIA01rjCJpVLbryIl9C5RsvQ843L' },
+    { label: 'Episode 13', title: "Moving into Dorms",                          id: '1xDXyohZ7MZOuCOHPnCHXajnYQfHe_HVS' },
+    { label: 'Episode 14', title: "Create Those Ultimate Moves",                id: '1G2o_qFUBRUKY4UZawowpobkzsQRweLs5' },
+    { label: 'Episode 15', title: "The Test",                                   id: '1L-BmBg9PQ0wumg6Dgf4grGQ9MVnGTjQf' },
+    { label: 'Episode 16', title: "Shiketsu High Lurking",                      id: '1xXLJuNvuQMdYNiVv-brL-UMOo_Wg2gca' },
+    { label: 'Episode 17', title: "Class 1-A",                                  id: '1DfevADYypJK-PIReBKV6iaVML09PkFYj' },
+    { label: 'Episode 18', title: "RUSH!",                                      id: '1fbSmHnhNVE7gq_IS0xPljmcXSYRCk_8Z' },
+    { label: 'Episode 19', title: "Rescue Exercises",                           id: '18yTABUJT7CCBW75slYTfFxmeNbahz-IY' },
+    { label: 'Episode 20', title: "Special Episode: Save the World with Love!", id: '1XgqtUvT83jTa4aGY0pgKMOAuJJCk_gXe' },
+    { label: 'Episode 21', title: "What's the Big Idea?",                       id: '1mofNPnSi10TbghIZ1rewmePMZeQBBmtH' },
+    { label: 'Episode 22', title: "A Talk About Your Quirk",                    id: '19P63QkEqODiDAtf9Ar7E186mw1our3a1' },
+    { label: 'Episode 23', title: "Deku vs. Kacchan, Part 2",                   id: '1fPL6SB8Ap7Mi1Ayr7L-_zVJ3Ev72wFx6' },
+    { label: 'Episode 24', title: "A Season for Encounters",                    id: '1qSpwqfvmiO7RLoQz16cJcnWzpVGd3LMM' },
+    { label: 'Episode 25', title: "Unrivaled",                                  id: '1Szmd_NjK8Uop2h910ui87WXkqoLCCczD' },
+  ],
+  4: [
+    { label: 'Episode 1',  title: "The Scoop on U.A. Class 1-A",           id: '1U8Y2vLO0EsFygKMxKFGN0LUStXi2w-6x' },
+    { label: 'Episode 2',  title: "Overhaul",                              id: '1AiUXAmadS78luoNu-tTFDAbkd0DdLpcV' },
+    { label: 'Episode 3',  title: "Boy Meets...",                          id: '1sTW25Zi5FuRycniq51gse4dIWOJy1enn' },
+    { label: 'Episode 4',  title: "Fighting Fate",                         id: '11AMs5RcEw1s7MsBuhCAu7gu-ElmpeeR-' },
+    { label: 'Episode 5',  title: "Let's Go, Gutsy Red Riot",              id: '1Bb0KI3KcPcRwaqji3_IuXxgj3f44e1qL' },
+    { label: 'Episode 6',  title: "An Unpleasant Talk",                    id: '1ZxPPc5AXXUWDneUMiVzJ-Co1NWpEk4hF' },
+    { label: 'Episode 7',  title: "GO!!",                                  id: '1L8lDrlGwgegSxD0wJ-a9sP8FnZWp3yao' },
+    { label: 'Episode 8',  title: "Suneater of the Big Three",             id: '1RZAXKrfZGGC_wVl1paT46iyVHPdVx6pD' },
+    { label: 'Episode 9',  title: "Red Riot",                              id: '1qicx_fIU2rNd7c2PDyn934bJjTprG8tW' },
+    { label: 'Episode 10', title: "Temp Squad",                            id: '1v1B3-MeTBCq3Ku5P-XoDF4TDtUqsIFV5' },
+    { label: 'Episode 11', title: "Lemillion",                             id: '1VChA_rVWiaUSnW40Gj77LJ-lGTxQgOw5' },
+    { label: 'Episode 12', title: "Unforeseen Hope",                       id: '1P8HqnOf2oeeQ9qHDoYP3i_6_S-I6Xo0e' },
+    { label: 'Episode 13', title: "Infinite 100%",                         id: '1rRiP-wzqAZXAGpFLPDHMGMR7h6aqoy44' },
+    { label: 'Episode 14', title: "Bright Future",                         id: '1W-tYY3K6kjOTyX6f2Ma4BxzrwN4dMA-u' },
+    { label: 'Episode 15', title: "Smoldering Flames",                     id: '1o6FjmQvJIWLuqFWYMfWra88mztxWFt1Q' },
+    { label: 'Episode 16', title: "Win Those Kids' Hearts",                id: '1SRV6zd3hahXtCR4o7rUPyfx6_WPZDU1A' },
+    { label: 'Episode 17', title: "Relief for License Trainees",           id: '1vEqCaFvNks1qfqzYvbe_dlVFwXEkTrm0' },
+    { label: 'Episode 18', title: "School Festival",                       id: '1OrGV1P3g2nml0OwPGSQHiNztL0xHd6pV' },
+    { label: 'Episode 19', title: "Deku vs. Gentle Criminal",              id: '17wwmUUG2gCevuyEZzlANBgFBqmlIKW4i' },
+    { label: 'Episode 20', title: "School Festival Start!!",               id: '1xXuOoVCBVrdM_InBiJF60litm3cRtiOH' },
+    { label: 'Episode 21', title: "Let It Flow! School Festival!",         id: '1Z6OKi21Dt_CPUTIMMyf3HiM0M2LTbmaI' },
+    { label: 'Episode 22', title: "Japanese Hero Billboard Chart",         id: '1Gw_fcrZMjgFs39f2wDoWW7eJb4ctIGoY' },
+    { label: 'Episode 23', title: "Sole Survivor",                         id: '1dzxKzzIuM1A3ljIGIKapEaO-3fmhjbx6' },
+    { label: 'Episode 24', title: "Bright Future",                         id: '1Jjjn7I-g2EMBo4tKj6JMetDBUuBW2wXU' },
+    { label: 'Episode 25', title: "Mirko, the No. 5 Hero",                 id: '1iDju5iGMYEXY_FU8hdf-OwNPpmfAeAhI' },
+  ],
+  5: [
+    { label: 'Episode 1',  title: "All Hands on Deck! Class 1-A",          id: '1Mk2bsjr86JNBSluzIekoLQ35abrIG46H' },
+    { label: 'Episode 2',  title: "Vestiges",                              id: '1fXzdTEK9LO9UhFzoqTu0eiIMpxJj8yv3' },
+    { label: 'Episode 3',  title: "Clash! Class A vs. Class B!",           id: '1xnijE15Ug-w74GcsgCRanOc8Mr7FL-N0' },
+    { label: 'Episode 4',  title: "Make It Happen, Shinso!",               id: '14nFyfHIan53cO1cJnMZpkfLjs-5aLm7P' },
+    { label: 'Episode 5',  title: "Operation New Improv Moves",            id: '1cLupSwjDE8nw62h9FAjQyew4U5SPbs0K' },
+    { label: 'Episode 6',  title: "Foresight",                             id: '1CcoYyO-h_zZUlRGHPNRcMuZ95pSPqugK' },
+    { label: 'Episode 7',  title: "Match 3",                               id: '1zHejKwLBawcIzqGES6foTd2yfTyE7AoZ' },
+    { label: 'Episode 8',  title: "Match 3 Conclusion",                    id: '1lHH-Ch-CTeM7xFpAPhXQVEMU61br5gLX' },
+    { label: 'Episode 9',  title: "Early Bird!",                           id: '1Zu21NFEMckYdt772d7P7TaEbLjaw4BTp' },
+    { label: 'Episode 10', title: "That Which Is Inherited",               id: '1zJLhqzOvgcVUuCOf1WR01GPT2ddqrzqT' },
+    { label: 'Episode 11', title: "Reconnect",                             id: '1EG1RQGwD0Gi0lWfzwLrBZ7l3J8na-a_0' },
+    { label: 'Episode 12', title: "The New Power and All For One",         id: '1GVkKvWn-KdpwSFV4n-ovvkXgYI43ev6a' },
+    { label: 'Episode 13', title: "Have a Merry Christmas!",               id: '1Et-192LOVXpqbTbFtUVFqUrvtiL4-SIl' },
+    { label: 'Episode 14', title: "Off to Endeavor's Agency!",             id: '13rEUHkGw8T_ZhHak9h1C3J17BlUSpw-K' },
+    { label: 'Episode 15', title: "Profound Bond",                         id: '1OtGCIgBtSulVBkzIF9KK7DOrTdFI10W4' },
+    { label: 'Episode 16', title: "Smoldering Flames",                     id: '13tMAYelX9FG6lgWudes3LFEEMRO5IUNE' },
+    { label: 'Episode 17', title: "Tomura Shigaraki: Origin",              id: '18UvasW7RnvdSJAmeZC_yLcI4rWSWOM07' },
+    { label: 'Episode 18', title: "You Cheated...!",                       id: '1BegpfOYXXFqa2XJ4pyhj5XAOfHX4p12F' },
+    { label: 'Episode 19', title: "More of a Hero Than Anyone",            id: '1CS7u1wJ2hY5xy_swCyGgy8xPnC_KxE2F' },
+    { label: 'Episode 20', title: "My Villain Academia",                   id: '1gVZtX3VqJ7z_jTddOFLBbIB0OLFa-hBX' },
+    { label: 'Episode 21', title: "Revival Party",                         id: '1_Cj7AkTkIUCHRVxcSFoLfpyXmnijDAVn' },
+    { label: 'Episode 22', title: "Inheritance",                           id: '1XW5bF7kjTuaUgocPxF78HMEi-ClrkRgK' },
+    { label: 'Episode 23', title: "Villain",                               id: '1zdDjjZBL6XBIou2MSM9INhX2Nhr7ekuM' },
+    { label: 'Episode 24', title: "Shift",                                 id: '1Q1vaZxk5biWjplEtE3Lq7n_oTAocThry' },
+    { label: 'Episode 25', title: "The High, Deep Blue Sky",               id: '1-RH07RE19d8m4_zVkYjqfEVH2ikLpZB1' },
+  ],
+  6: [
+    { label: 'Episode 1',  title: "A Quiet Beginning",                     id: '1KvdrmbpKXmRYpNJV6twAkkKrpRxgjYQx' },
+    { label: 'Episode 2',  title: "Encounter, Part 2",                     id: '1Yq3KbQ1HF8ocdgqNwBEqljq7Z5m_Y4l2' },
+    { label: 'Episode 3',  title: "One Thing at a Time",                   id: '1kE9RQqHOEHWV59RA1-pwCUA9m_istaRM' },
+    { label: 'Episode 4',  title: "Inheritance",                           id: '1wV1HsssB9apKHFDEaRWV8HUO0lxrATPe' },
+    { label: 'Episode 5',  title: "The Thrill of Destruction",             id: '14EdFPn28-W5-l05kUIsT1pqsPteO7c74' },
+    { label: 'Episode 6',  title: "Encounter",                             id: '1cWfr60_ZVhuEsCtzeTJiGPvPTMkFDWAu' },
+    { label: 'Episode 7',  title: "Disaster Walker",                       id: '1ZlqjL_SprQl1__wwqOdPb7Rj9TAF-TwO' },
+    { label: 'Episode 8',  title: "League of Villains vs. U.A. Students",  id: '1JtAsJs2BWGORbwwK5nCIefGljI6qs73T' },
+    { label: 'Episode 9',  title: "Katsuki Bakugo: Rising",                id: '17wJrkZD5pIMHeqr9RzkEjk3kAwRDcjw6' },
+    { label: 'Episode 10', title: "The Ones Within Us",                    id: '1GziAychhNt-5gKIdB7koxYguRr4Y5Hrc' },
+    { label: 'Episode 11', title: "Dabi's Dance",                          id: '1JioFH3NIcA68uFgYswjGrC5rqia6rrhJ' },
+    { label: 'Episode 12', title: "Threads of Hope",                       id: '1vAbe2pI-wJVis23sjAxJU33owexieRTJ' },
+    { label: 'Episode 13', title: "Final Performance",                     id: '1652FvPPcwzI-FnyaSLEz76Mp991RYoY8' },
+    { label: 'Episode 14', title: "Hellish Hell",                          id: '1kxYGVWCMqFhF3E1zCDRT3AS8DeY7CeN3' },
+    { label: 'Episode 15', title: "Tartarus",                              id: '1GhltCUKdjT8uj-h-jxnmJNWKFwr8p9mB' },
+    { label: 'Episode 16', title: "The Hellish Todoroki Family, Part 2",   id: '1Rz9uykmFa08Hq3eIAkvMxQF3IoRnGvDm' },
+    { label: 'Episode 17', title: "The Stoic Himiko Toga",                 id: '1391CsGd64jKF8QXAKHoQvTuUKAvNRxx5' },
+    { label: 'Episode 18', title: "Izuku Midoriya and Tomura Shigaraki",   id: '1ZrWiBL1-ETT_4Jq1ZIw-5WKt1lLIu8uA' },
+    { label: 'Episode 19', title: "Villain",                               id: '1Xj9N-FF5SudM-0Pd2OBBgn3O79_TFeod' },
+    { label: 'Episode 20', title: "Deku as a Villain",                     id: '1G2x0zcjnloIeNQUB7Ip0IlVENIeht2LX' },
+    { label: 'Episode 21', title: "The Lovely Lady Nagant",                id: '1_7qBf54BXElY5KCZjXaLvLmQ3_gtmPxA' },
+    { label: 'Episode 22', title: "Quirk Awakening",                       id: '1lCm8-nig7kKACpJQzg0SiFw3kWOuq7Tk' },
+    { label: 'Episode 23', title: "No Man Is an Island",                   id: '1Kgoh4oWp3i30YaxxRJdYF7V05LBb0NTW' },
+    { label: 'Episode 24', title: "A Young Woman's Declaration",           id: '1g5YLJowfS0i5w0PUshdYoCSauDF3NqFO' },
+    { label: 'Episode 25', title: "Sounds of Collapse",                    id: '1BBBIghriMXDYfWfbaZfrUSkc7H68hFmM' },
+  ],
+  7: [
+    { label: 'Episode 1',  title: "In the nick of time! A Big-City Nerd",  id: '1MZyk5zQQyygMFaAqDh2s-01LQotBMB89' },
+    { label: 'Episode 2',  title: "Rampaging Villains",                    id: '19EUQhSaiqKYnCQHpqDMUP19vJJ5L4ekg' },
+    { label: 'Episode 3',  title: "Inflation",                             id: '15ZpYoa22hqpdlFa4fdqaBkdEzQuVuNWJ' },
+    { label: 'Episode 4',  title: "Overhaul",                              id: '1vWDm92Ks4mz69zPuJUMpOCOixvix7ITm' },
+    { label: 'Episode 5',  title: "Intro, Part 2",                         id: '1AxgLDstp9sUhVE3HJDMuUCH6FY6k8B8i' },
+    { label: 'Episode 6',  title: "The Villain Toga Himiko Strikes",       id: '1yfuUe0vDF1fVH1H12BIe-n1BrzFuGfS8' },
+    { label: 'Episode 7',  title: "Fallen Angel",                          id: '1L6rDdICuHRW-qnsAue7-_xi8nm6lEbd1' },
+    { label: 'Episode 8',  title: "One Step Forward, Two Steps Back",      id: '1--JIJb37-rGRQi-tRi3Ha0sfFc7nw2xs' },
+    { label: 'Episode 9',  title: "Rescue",                                id: '1CaHS2ArFryRdRCeRNGJqm_zespDs6QSc' },
+    { label: 'Episode 10', title: "Light Fades to Rain",                   id: '1c1t2q_Ek-2GuTmWxFjWFnkul-ihyfJTN' },
+    { label: 'Episode 11', title: "Specter",                               id: '1zKw2lS-75brFs7OUH-vzPhdcypR2XaiE' },
+    { label: 'Episode 12', title: "Congealing",                            id: '1i1_xTexStHWjpRjaR696UQL6F8atJ0q7' },
+    { label: 'Episode 13', title: "The Final Act Begins",                  id: '1zZQ2tkcDq55X_eI3JihbHyBsCCahL43v' },
+    { label: 'Episode 14', title: "Quirks in Question",                    id: '1HlRAgPlB-9lllkmEPz-FuO9zKslcAQz-' },
+    { label: 'Episode 15', title: "Gloom",                                 id: '1it0KrsyaayEVDd1thTqK62VEZO2yExF-' },
+    { label: 'Episode 16', title: "Intruder",                              id: '11Cr140uKWHvmNW1sfX3hnmCZ2_eYCECt' },
+    { label: 'Episode 17', title: "Tenko Shimura",                         id: '18csb53iyLwGFgRON6TAzxDhNRdAvl32U' },
+    { label: 'Episode 18', title: "Tomura Shigaraki",                      id: '1z_G5hBegFV0J8z7ltSfSr1zxoakZWF1F' },
+    { label: 'Episode 19', title: "Hitoshi Shinso",                        id: '1C9M89_qyMTZMpc0ywolVbCLzk1P3bjN0' },
+    { label: 'Episode 20', title: "A chain of events",                     id: '1RYORiZm7zIFhM3TOGHGvCY6bSuzDLbvH' },
+    { label: 'Episode 21', title: "Toward That Summit",                    id: '10PFI0WGXpT1x7j3yFes3rZuT30GYmjY_' },
+  ],
+  8: [
+    { label: 'Episode 1',  title: "It's a Shindig, Not a Funeral",         id: '1emZT1XrCCxUw42nEzmCgY_nYUQBDzp6Y' },
+    { label: 'Episode 2',  title: "Villain",                               id: '1yNfuXai-0Tl1SVzqpRPGjggX5qxYjL3j' },
+    { label: 'Episode 3',  title: "Izuku Midoriya and Tomura Shigaraki",   id: '1OsaRnHvBIITnvbYucdLcj-iQUroAdjnS' },
+    { label: 'Episode 4',  title: "Towards the Light",                     id: '1Hif8obXX092R48jgtBgIR4bXA7Grerb6' },
+    { label: 'Episode 5',  title: "The End of an Era",                     id: '1vp6LzC1Go0tEHiyhbvqAvUqEzBjIsobq' },
+    { label: 'Episode 6',  title: "All For One",                           id: '1OjyQdSxhCQuSzMLNDVQPtFaZ2-KneT6T' },
+    { label: 'Episode 7',  title: "Peace for the Future",                  id: '14NlzDQAN95KE-LM2aH7WGYPqr0Oi0OB1' },
+    { label: 'Episode 8',  title: "A New Hero",                            id: '11nBer_xkLuDETryjwlTrFTeRpgBzQ9m1' },
+    { label: 'Episode 9',  title: "Toward a Bright Future",                id: '1hI971CV8SWIjp6c6IMUmyAMv9_uLmK7-' },
+    { label: 'Episode 10', title: "The Last Tremor",                       id: '1yaX4PaGt2h-q1PeGIQXueHFiBImZJzbM' },
+    { label: 'Episode 11', title: "We Are All",                            id: '1q5tT2gzsxr4ivgkIJIZnPhRSJBDWN9A9' },
+  ],
+};
+
+/* ── URL helpers ── */
+function streamUrl(id)   { return `https://drive.google.com/file/d/${id}/preview`; }
+function downloadUrl(id) { return `https://drive.google.com/uc?export=download&id=${id}`; }
+function driveUrl(id)    { return `https://drive.google.com/file/d/${id}/view`; }
+
+/* ── Build flat playlist (only episodes WITH an id) ── */
+let playlist = [];
+Object.entries(SEASONS).forEach(([s, eps]) => {
+  eps.forEach((ep, i) => {
+    playlist.push({ ...ep, season: +s, epNum: i + 1, globalIndex: playlist.length });
+  });
+});
+
+/* Playable episodes only (has id) */
+const playable = playlist.filter(e => e.id);
+
+let currentIndex = 0; // index in playlist[]
+
+/* ── Render episode cards ── */
+function renderEpisodes(season, filter = '') {
+  const grid = document.getElementById(`epGrid${season}`);
+  const eps  = SEASONS[season];
+  const q    = filter.toLowerCase();
+  grid.innerHTML = '';
+
+  eps.forEach((ep, i) => {
+    if (q && !ep.label.toLowerCase().includes(q) && !ep.title.toLowerCase().includes(q)) return;
+
+    const globalIdx = playlist.findIndex(p => p.season === season && p.epNum === i + 1);
+    const hasVideo  = !!ep.id;
+
+    const card = document.createElement('div');
+    card.className = 'ep-card' + (hasVideo ? '' : ' ep-no-src');
+    card.dataset.index = globalIdx;
+
+    card.innerHTML = `
+      <div class="ep-thumb">
+        <div class="ep-play-icon">${hasVideo ? '▶' : '🕐'}</div>
+        <span class="ep-num">S${season}E${i+1}</span>
+      </div>
+      <div class="ep-info" style="padding-right:${hasVideo ? '44px' : '8px'}">
+        <p class="ep-label">${ep.label}${!hasVideo ? '<span class="ep-badge-soon">Soon</span>' : ''}</p>
+        <p class="ep-title">${ep.title}</p>
+      </div>
+      ${hasVideo ? `<a class="ep-dl-btn" href="${downloadUrl(ep.id)}" data-drive-id="${ep.id}" download
+        title="Download ${ep.label}" onclick="event.stopPropagation()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+        </svg></a>` : ''}`;
+
+    if (hasVideo) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => openPlayer(globalIdx));
+    }
+
+    grid.appendChild(card);
+  });
+}
+
+renderEpisodes(1);
+renderEpisodes(2);
+renderEpisodes(3);
+renderEpisodes(4);
+renderEpisodes(5);
+renderEpisodes(6);
+renderEpisodes(7);
+renderEpisodes(8);
+
+/* ── Set download link on hero button ── */
+const firstEp = SEASONS[1][0];
+if (firstEp.id) {
+  document.getElementById('downloadFirstBtn').href = downloadUrl(firstEp.id);
+  document.getElementById('downloadFirstBtn').dataset.driveId = firstEp.id;
+}
+
+/* ── Season tabs ── */
+let activeSeason = 1;
+document.getElementById('seasonSwitcher').addEventListener('click', e => {
+  const btn = e.target.closest('.season-tab-btn');
+  if (!btn) return;
+  const s = +btn.dataset.season;
+  if (s === activeSeason) return;
+  activeSeason = s;
+  document.querySelectorAll('.season-tab-btn').forEach(b => b.classList.toggle('active', +b.dataset.season === s));
+  document.querySelectorAll('.season-panel').forEach(p => p.classList.toggle('active', p.id === `season-panel-${s}`));
+});
+
+/* ── Episode search ── */
+document.getElementById('epSearch1').addEventListener('input', e => renderEpisodes(1, e.target.value));
+document.getElementById('epSearch2').addEventListener('input', e => renderEpisodes(2, e.target.value));
+document.getElementById('epSearch3').addEventListener('input', e => renderEpisodes(3, e.target.value));
+document.getElementById('epSearch4').addEventListener('input', e => renderEpisodes(4, e.target.value));
+document.getElementById('epSearch5').addEventListener('input', e => renderEpisodes(5, e.target.value));
+document.getElementById('epSearch6').addEventListener('input', e => renderEpisodes(6, e.target.value));
+document.getElementById('epSearch7').addEventListener('input', e => renderEpisodes(7, e.target.value));
+document.getElementById('epSearch8').addEventListener('input', e => renderEpisodes(8, e.target.value));
+
+/* ── Video Player ── */
+const videoModal   = document.getElementById('videoModal');
+const videoPlayer  = document.getElementById('videoPlayer');
+const videoIframe  = document.getElementById('videoIframe');
+const videoWrap    = document.getElementById('videoWrap');
+const videoLoading = document.getElementById('videoLoading');
+const videoError   = document.getElementById('videoError');
+const videoEpName  = document.getElementById('videoEpName');
+const videoEpCtr   = document.getElementById('videoEpCounter');
+const btnPrev      = document.getElementById('btnPrev');
+const btnNext      = document.getElementById('btnNext');
+const btnDownload  = document.getElementById('btnDownload');
+const errOpenDrive = document.getElementById('errOpenDrive');
+
+function openPlayer(globalIdx) {
+  const ep = playlist[globalIdx];
+  if (!ep || !ep.id) return;
+  currentIndex = globalIdx;
+  videoModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  loadEpisode(ep);
+  updateControls();
+}
+
+function loadEpisodeLegacy(ep) {
+  // Reset states
+  videoLoading.style.display = 'flex';
+  videoError.style.display   = 'none';
+  // hide both players initially
+  videoPlayer.style.display  = 'none';
+  videoIframe.style.display  = 'none';
+  try { videoPlayer.pause(); } catch(e){}
+  try { videoPlayer.removeAttribute('src'); videoPlayer.load(); } catch(e){}
+
+  // Update labels
+  videoEpName.textContent = `S${ep.season} · ${ep.label} — ${ep.title}`;
+  videoEpCtr.textContent  = `${ep.globalIndex + 1} / ${playlist.length}`;
+
+  // Set download link (direct download, no redirect)
+  btnDownload.href         = downloadUrl(ep.id);
+  btnDownload.dataset.driveId = ep.id;
+  btnDownload.setAttribute('download', `My-Hero-Academia-S${ep.season}-${ep.label}.mp4`);
+  errOpenDrive.href        = driveUrl(ep.id);
+
+  // First try: use direct download URL (may stream if Drive serves correct media headers)
+  const src = downloadUrl(ep.id);
+  videoPlayer.src = src;
+  videoPlayer.style.display = 'block';
+
+  // If native video can play, hide loader. If it errors, fallback to Drive preview iframe.
+  videoPlayer.oncanplay = () => {
+    videoLoading.style.display = 'none';
+    videoError.style.display   = 'none';
+  };
+
+  videoPlayer.onerror = () => {
+    // Native playback failed — try Drive preview in an iframe
+    videoLoading.style.display = 'none';
+    videoPlayer.style.display  = 'none';
+    const iframeSrc = streamUrl(ep.id);
+    videoIframe.src = iframeSrc;
+    videoIframe.style.display = 'block';
+    // If iframe doesn't load within a short time, show error message
+    let iframeTimeout = setTimeout(() => {
+      if (videoIframe.style.display === 'block') {
+        videoIframe.style.display = 'none';
+        videoError.style.display = 'flex';
+      }
+    }, 5000);
+    videoIframe.onload = () => { clearTimeout(iframeTimeout); videoError.style.display = 'none'; };
+  };
+
+  // Timeout fallback if canplay never fires (Drive sometimes slow)
+  let fallback = setTimeout(() => {
+    if (videoLoading.style.display !== 'none') {
+      // Still loading — hide spinner, let video handle itself
+      videoLoading.style.display = 'none';
+      videoPlayer.style.display  = 'block';
+    }
+  }, 5000);
+
+  videoPlayer.addEventListener('canplay', () => clearTimeout(fallback), { once: true });
+
+  // Highlight active episode card
+  document.querySelectorAll('.ep-card').forEach(c => {
+    c.classList.toggle('playing', +c.dataset.index === currentIndex);
+  });
+}
+
+function loadEpisode(ep) {
+  videoLoading.style.display = 'flex';
+  videoError.style.display   = 'none';
+  videoPlayer.style.display  = 'none';
+  videoIframe.style.display  = 'none';
+  try { videoPlayer.pause(); } catch(e){}
+  try { videoPlayer.removeAttribute('src'); videoPlayer.load(); } catch(e){}
+  try { videoIframe.removeAttribute('src'); } catch(e){}
+
+  videoEpName.textContent = `S${ep.season} - ${ep.label} - ${ep.title}`;
+  videoEpCtr.textContent  = `${ep.globalIndex + 1} / ${playlist.length}`;
+
+  btnDownload.href         = downloadUrl(ep.id);
+  btnDownload.dataset.driveId = ep.id;
+  btnDownload.setAttribute('download', `My-Hero-Academia-S${ep.season}-${ep.label}.mp4`);
+  errOpenDrive.href        = driveUrl(ep.id);
+
+  const iframeSrc = streamUrl(ep.id);
+  let iframeLoaded = false;
+  const iframeTimeout = setTimeout(() => {
+    if (!iframeLoaded) {
+      videoIframe.style.display = 'none';
+      videoError.style.display = 'flex';
+    }
+  }, 12000);
+
+  videoIframe.onload = () => {
+    iframeLoaded = true;
+    clearTimeout(iframeTimeout);
+    videoLoading.style.display = 'none';
+    videoError.style.display   = 'none';
+  };
+
+  videoIframe.src = iframeSrc;
+  videoIframe.style.display = 'block';
+
+  document.querySelectorAll('.ep-card').forEach(c => {
+    c.classList.toggle('playing', +c.dataset.index === currentIndex);
+  });
+}
+
+function updateControls() {
+  // Find adjacent playable episodes
+  const prevPlayable = playlist.slice(0, currentIndex).reverse().find(e => e.id);
+  const nextPlayable = playlist.slice(currentIndex + 1).find(e => e.id);
+  btnPrev.disabled = !prevPlayable;
+  btnNext.disabled = !nextPlayable;
+}
+
+document.getElementById('videoClose').addEventListener('click', () => {
+  videoModal.classList.remove('open');
+  document.body.style.overflow = '';
+  try { videoPlayer.pause(); } catch(e){}
+  try { videoPlayer.removeAttribute('src'); videoPlayer.load(); } catch(e){}
+  try { videoIframe.removeAttribute('src'); videoIframe.style.display = 'none'; } catch(e){}
+});
+
+btnPrev.addEventListener('click', () => {
+  const prev = playlist.slice(0, currentIndex).reverse().find(e => e.id);
+  if (prev) { currentIndex = prev.globalIndex; loadEpisode(prev); updateControls(); }
+});
+
+btnNext.addEventListener('click', () => {
+  const next = playlist.slice(currentIndex + 1).find(e => e.id);
+  if (next) { currentIndex = next.globalIndex; loadEpisode(next); updateControls(); }
+});
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e => {
+  if (!videoModal.classList.contains('open')) return;
+  if (e.key === 'Escape')      document.getElementById('videoClose').click();
+  if (e.key === 'ArrowRight')  btnNext.click();
+  if (e.key === 'ArrowLeft')   btnPrev.click();
+  if (e.key === ' ')           { e.preventDefault(); if (videoPlayer.style.display !== 'none') { videoPlayer.paused ? videoPlayer.play() : videoPlayer.pause(); } }
+});
+
+// Swipe navigation
+let touchStartX = 0;
+videoModal.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
+videoModal.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(dx) < 70) return;
+  if (dx < 0) btnNext.click(); else btnPrev.click();
+}, {passive:true});
+
+// Watch Ep 1 button
+document.getElementById('watchFirstBtn').addEventListener('click', () => {
+  const first = playlist.find(e => e.id);
+  if (first) openPlayer(first.globalIndex);
+});
+
+/* ── Theme ── */
+const root = document.documentElement;
+const themeBtn = document.getElementById('themeToggle');
+const saved = localStorage.getItem('theme') || 'dark';
+root.setAttribute('data-theme', saved);
+themeBtn.textContent = saved === 'dark' ? '🌙' : '☀️';
+themeBtn.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  themeBtn.textContent = next === 'dark' ? '🌙' : '☀️';
+  localStorage.setItem('theme', next);
+});
+
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+/* ── Share ── */
+const SITE_URL  = 'https://ani-tamil.me/MY-HERO-ACADEMIA.html';
+const SITE_TEXT = '🎌 Watch My Hero Academia in Tamil — Free on αηιмєѕ தமிழ்!';
+const shareModal = document.getElementById('shareModal');
+
+function openShareModal() { shareModal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeShareModal() { shareModal.classList.remove('open'); document.body.style.overflow = ''; }
+
+['openShareNav','openShareHero'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('click', openShareModal);
+});
+shareModal.addEventListener('click', e => { if (e.target === shareModal) closeShareModal(); });
+
+function shareWhatsApp()  { window.open(`https://wa.me/?text=${encodeURIComponent(SITE_TEXT+' '+SITE_URL)}`,'_blank'); }
+function shareTelegram()  { window.open(`https://t.me/share/url?url=${encodeURIComponent(SITE_URL)}&text=${encodeURIComponent(SITE_TEXT)}`,'_blank'); }
+function shareTwitter()   { window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(SITE_TEXT)}&url=${encodeURIComponent(SITE_URL)}`,'_blank'); }
+function shareFacebook()  { window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE_URL)}`,'_blank'); }
+function shareReddit()    { window.open(`https://reddit.com/submit?url=${encodeURIComponent(SITE_URL)}&title=${encodeURIComponent(SITE_TEXT)}`,'_blank'); }
+function shareEmail()     { window.open(`mailto:?subject=${encodeURIComponent('My Hero Academia Tamil Dubbed')}&body=${encodeURIComponent(SITE_TEXT+'\n\n'+SITE_URL)}`); }
+function shareNative()    { if(navigator.share) navigator.share({title:'My Hero Academia Tamil Dubbed',text:SITE_TEXT,url:SITE_URL}); else copyLink(); }
+function copyLink()       { navigator.clipboard.writeText(SITE_URL).then(()=>showToast('Link copied! 🔗')); }
+
+const toastEl = document.getElementById('toast');
+let toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2400);
+}
+
+// ── Download handler: try fetch -> blob to avoid redirect, fallback to opening Drive link ──
+async function downloadDriveById(id, filename) {
+  const url = downloadUrl(id);
+  showToast('Preparing download...');
+  try {
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error('Network error');
+    const blob = await resp.blob();
+    const a = document.createElement('a');
+    const objUrl = URL.createObjectURL(blob);
+    a.href = objUrl;
+    a.download = filename || `My-Hero-Academia-${id}.mp4`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(objUrl);
+    showToast('Download started');
+  } catch (err) {
+    // Fallback: open Drive download link (may show Drive UI if CORS blocks fetch)
+    window.open(url, '_blank', 'noopener');
+  }
+}
+
+// Delegate clicks for any download buttons/links and route through fetch download
+document.addEventListener('click', e => {
+  const dl = e.target.closest('.ep-dl-btn, .ctrl-download, #downloadFirstBtn');
+  if (!dl) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const id = dl.dataset.driveId || (new URL(dl.href, location.href).searchParams.get('id'));
+  const filename = dl.getAttribute('download') || `${document.title.replace(/\s+/g,'-')}-${id}.mp4`;
+  if (!id) { showToast('File not available'); return; }
+  downloadDriveById(id, filename);
+});
+</script>
+</body>
+</html>

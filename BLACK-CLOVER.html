@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Clover — αηιмєѕ தமிழ்</title>
+  <meta name="description" content="Watch Black Clover in Tamil on αηιмєѕ தமிழ். All episodes free, dubbed in Tamil." />
+  <meta property="og:title" content="Black Clover Tamil — αηιмєѕ தமிழ்" />
+  <meta property="og:description" content="Watch Black Clover in Tamil Dub — free on αηιмєѕ தமிழ்." />
+  <meta property="og:image" content="https://ani-tamil.me/BlackClover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="anime-style.css" />
+  <style>
+    /* ── Video Player (native <video>) ── */
+    .video-wrap { background: #000; position: relative; flex: 1; display: flex; flex-direction: column; }
+    .video-player {
+      width: 100%; height: 100%;
+      background: #000;
+      display: block;
+      flex: 1;
+      min-height: 0;
+    }
+    /* Controls bar extras */
+    .ctrl-download {
+      display: flex; align-items: center; gap: 6px;
+      height: 36px; padding: 0 14px;
+      border-radius: 99px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: #fff; font-size: 0.8rem; font-weight: 600;
+      text-decoration: none;
+      transition: all 0.22s;
+    }
+    .ctrl-download:hover { background: rgba(46,213,115,0.25); border-color: #2ed573; color: #2ed573; }
+    /* Episode card download btn */
+    .ep-card { position: relative; }
+    .ep-dl-btn {
+      position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+      width: 30px; height: 30px; border-radius: 50%;
+      background: rgba(46,213,115,0.15);
+      border: 1px solid rgba(46,213,115,0.4);
+      color: #2ed573;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; text-decoration: none;
+      opacity: 0; transition: opacity 0.2s, background 0.2s;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+    .ep-card:hover .ep-dl-btn { opacity: 1; }
+    .ep-dl-btn:hover { background: rgba(46,213,115,0.3); }
+    /* Mobile: always show download */
+    @media (max-width: 768px) { .ep-dl-btn { opacity: 1; } }
+    /* No-src badge */
+    .ep-no-src { opacity: 0.45; }
+    .ep-badge-soon {
+      font-size: 0.62rem; font-weight: 700; padding: 2px 7px;
+      background: rgba(244,162,97,0.15); color: #f4a261;
+      border-radius: 99px; margin-left: 6px; vertical-align: middle;
+    }
+    /* Video error state */
+    .video-error {
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      gap: 14px; position: absolute; inset: 0;
+      background: #000; color: rgba(255,255,255,0.7); font-size: 0.88rem; text-align: center; padding: 24px;
+    }
+    .video-error .err-icon { font-size: 2.8rem; }
+    .video-error a {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 99px;
+      background: #e63946; color: #fff; font-weight: 700; font-size: 0.82rem;
+      text-decoration: none; margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ── -->
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo-emoji">⚔️</div>
+    <div class="nav-title">αηιмєѕ தமிழ்<span>Tamil Anime Hub</span></div>
+  </a>
+  <div class="nav-spacer"></div>
+  <div class="nav-actions">
+    <a href="home.html" class="nav-btn home-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <span>Browse</span>
+    </a>
+    <button class="nav-btn" id="openShareNav">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      <span>Share</span>
+    </button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+<!-- ── Anime Hero ── -->
+<div class="anime-hero">
+  <div class="anime-hero-bg">
+    <img src="BlackClover.jpg" alt="" aria-hidden="true" onerror="this.style.display='none'" class="anime-hero-backdrop"/>
+    <div class="anime-hero-overlay"></div>
+  </div>
+  <div class="container anime-hero-content">
+    <div class="anime-poster-wrap fade-up">
+      <img src="BlackClover.jpg" alt="Black Clover poster" class="anime-poster"
+        onerror="this.src='https://placehold.co/240x360/1e1e24/e63946?text=Black+Clover'"/>
+    </div>
+    <div class="anime-info fade-up delay-1">
+      <div class="anime-badges">
+        <span class="badge badge-red">🎙️ Tamil Dubbed</span>
+        <span class="badge badge-gold">⭐ 8.1 / 10</span>
+        <span class="badge badge-green">✅ Completed</span>
+      </div>
+      <h1 class="anime-title">Black Clover</h1>
+      <p class="anime-native">ブラッククローバー · Burakku Kurōbā</p>
+      <div class="anime-meta-row">
+        <span class="anime-meta-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          2017
+        </span>
+        <span class="anime-meta-dot">·</span>
+        <span class="anime-meta-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          1 Season
+        </span>
+        <span class="anime-meta-dot">·</span>
+        <span class="anime-meta-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          170 Episodes
+        </span>
+        <span class="anime-meta-dot">·</span>
+        <span class="anime-meta-item">Action · Fantasy · Magic</span>
+      </div>
+      <p class="anime-desc">
+        In a world where magic is everything, Asta is born with absolutely none. His rival Yuno wields
+        extraordinary power and receives a legendary four-leaf grimoire. Yet Asta refuses to give up his
+        dream of becoming the Wizard King — the greatest mage in the land. Armed with a mysterious
+        five-leaf grimoire and sheer willpower, he joins the Black Bulls magic knight squad and fights
+        to prove that hard work can surpass natural talent.
+      </p>
+      <div class="anime-action-row">
+        <button class="btn-watch" id="watchFirstBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch Episode 1
+        </button>
+        <a class="btn-watch" id="downloadFirstBtn" style="background:rgba(46,213,115,0.2);color:#2ed573;border:1.5px solid #2ed573;box-shadow:none;" href="#" download>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Ep 1
+        </a>
+        <button class="btn-icon" id="openShareHero" title="Share">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Episode Sections ── -->
+<main class="anime-main">
+  <div class="container">
+    <div class="season-switcher" id="seasonSwitcher">
+      <button class="season-tab-btn active" data-season="1">Season 1</button>
+    </div>
+
+    <!-- Season 1 -->
+    <div class="season-panel active" id="season-panel-1">
+      <div class="season-panel-header">
+        <div>
+          <h2 class="season-panel-title">Season 1</h2>
+          <p class="season-panel-meta">170 Episodes · 2017 · Tamil Dubbed</p>
+        </div>
+        <div class="ep-search-wrap">
+          <input type="text" class="ep-search" placeholder="Search episode..." id="epSearch1" />
+        </div>
+      </div>
+      <div class="ep-grid" id="epGrid1"></div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-brand">αηιмєѕ தமிழ்</div>
+  <p class="footer-desc">Free Tamil anime streaming — dubbed & subbed. No ads, no subscriptions.</p>
+  <div class="footer-links">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="home.html" class="footer-link">Browse</a>
+  </div>
+  <div class="footer-copy">
+    © <span id="footerYear"></span> <span>αηιмєѕ தமிழ்</span>. All rights reserved.
+    Black Clover © Yūki Tabata / Shueisha. Fan-made, non-commercial site.
+  </div>
+</footer>
+
+<!-- ── Video Modal ── -->
+<div class="video-modal" id="videoModal">
+  <div class="video-topbar">
+    <button class="video-close" id="videoClose" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="video-ep-info">
+      <p class="video-anime-name">Black Clover · Tamil Dub</p>
+      <p class="video-ep-name" id="videoEpName">Episode 1</p>
+    </div>
+    <div class="video-ep-counter" id="videoEpCounter">1 / 170</div>
+  </div>
+
+  <div class="video-wrap" id="videoWrap">
+    <!-- Loading spinner -->
+    <div class="video-loading" id="videoLoading">
+      <div class="spinner"></div>
+      <span>Loading episode...</span>
+    </div>
+    <!-- Error state -->
+    <div class="video-error" id="videoError">
+      <div class="err-icon">⚠️</div>
+      <p>Could not load this episode.<br/>Make sure the Google Drive file is set to <strong>Anyone with the link</strong>.</p>
+      <a id="errOpenDrive" href="#" target="_blank" rel="noopener">Open in Google Drive</a>
+    </div>
+    <!-- Native video player -->
+    <video id="videoPlayer" class="video-player" controls controlsList="nodownload" playsinline preload="none">
+      Your browser does not support the video tag.
+    </video>
+    <!-- Google Drive preview player -->
+    <iframe id="videoIframe" class="video-player" style="display:none; border:0;" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="video-controls">
+    <button class="video-nav-btn" id="btnPrev" disabled>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+      Prev
+    </button>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <a class="ctrl-download" id="btnDownload" href="#" download title="Download this episode">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </a>
+    </div>
+    <button class="video-nav-btn" id="btnNext">
+      Next
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2.5-6l5.5 4V8l-5.5 4zm7.5-6v12h2V6h-2z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ── Share Modal ── -->
+<div class="modal-overlay" id="shareModal" role="dialog">
+  <div class="share-sheet">
+    <div class="share-handle"></div>
+    <p class="share-title">Share Black Clover</p>
+    <div class="share-grid">
+      <button class="share-btn" onclick="shareWhatsApp()"><span class="share-icon">💬</span>WhatsApp</button>
+      <button class="share-btn" onclick="shareTelegram()"><span class="share-icon">✈️</span>Telegram</button>
+      <button class="share-btn" onclick="shareTwitter()"><span class="share-icon">🐦</span>Twitter</button>
+      <button class="share-btn" onclick="shareFacebook()"><span class="share-icon">👍</span>Facebook</button>
+      <button class="share-btn" onclick="shareReddit()"><span class="share-icon">🤖</span>Reddit</button>
+      <button class="share-btn" onclick="shareEmail()"><span class="share-icon">📧</span>Email</button>
+      <button class="share-btn" onclick="shareNative()"><span class="share-icon">📤</span>More</button>
+      <button class="share-btn" onclick="copyLink()"><span class="share-icon">🔗</span>Copy</button>
+    </div>
+    <div class="share-copy-row">
+      <span class="share-copy-url">https://ani-tamil.me/BLACK-CLOVER.html</span>
+      <button class="share-copy-btn" onclick="copyLink()">Copy Link</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Toast ── -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ================================================================
+   BLACK CLOVER — Episode Data
+   Each episode has:
+     label : display label
+     title : episode title
+     id    : Google Drive FILE ID (just the ID, not full URL)
+   URLs are generated automatically:
+     Stream  → https://drive.google.com/file/d/ID/preview
+     Download→ https://drive.google.com/uc?export=download&id=ID
+   Episodes without an id show as "Coming Soon"
+   ================================================================ */
+const SEASONS = {
+  1: [
+    { label: 'Episode 1',   title: "Asta and Yuno",                        id: '1mUGzVSmQMhlLv-vGswd_qZdr0nnFSNCn' },
+    { label: 'Episode 2',   title: "The Five-Leaf Clover Grimoire",        id: '1UU6DMYvfNjdgx-czAlC-QVXr_h1ueQlT' },
+    { label: 'Episode 3',   title: "To the Royal Capital of the Clover Kingdom!", id: '1fp06RDOdwftq0lW15S4uNfMXd6vimS-R' },
+    { label: 'Episode 4',   title: "The Magic Knights Entrance Exam",      id: '147hRagMRsgIPIV0D53DgfWSum-laJky3' },
+    { label: 'Episode 5',   title: "The Road to the Wizard King",          id: '1hx0wmpyjPti8TizTmMIxTGmv3ncDwISy' },
+    { label: 'Episode 6',   title: "The Black Bulls",                      id: '1q7LnzBNbZkUUWpS2-jgmQ9IhrlIVIlir' },
+    { label: 'Episode 7',   title: "Another New Member",                   id: '1I9eSC2H5HtdMY614TnPCoS3DV2BtV2Rc' },
+    { label: 'Episode 8',   title: "Go! Go! First Mission",                id: '1buCNiY0a4EOUZEZcG-RCFol77KCiijDQ' },
+    { label: 'Episode 9',   title: "Beware the Guys Who Are Popular in Town", id: '16DXvcwOeLI66t9OxpJB8tHux8fPv2nIG' },
+    { label: 'Episode 10',  title: "Memories of You",                      id: '1ffPq-OgUAM6AscoiG_Q5oQ6_a7YMpHwx' },
+    { label: 'Episode 11',  title: "What Happened on a Certain Day in the Castle Town", id: '1k17x6eCR_ZJ05kwMs603258pbNzFy87r' },
+    { label: 'Episode 12',  title: "The Wizard King Saw, Heard, and Considered", id: '1VtkSrelCJSCold7WLk4ppFIClYscM3dt' },
+    { label: 'Episode 13',  title: "The Strongest Magic Knight",           id: '1seFA0r91bk8-u1pZyEKzcgGpgho2S2MD' },
+    { label: 'Episode 14',  title: "Dungeon",                              id: '12w76KF4JlneqTBJmibyP7TG2EaC3A2d1' },
+    { label: 'Episode 15',  title: "The Diamond Mage",                     id: '1xRk1DCmww_YLrAiUZ01_tJFTzHuUz1rH' },
+    { label: 'Episode 16',  title: "Friends",                              id: '1O9LygKLz4t2v1fXNx--AKS7kRJ373syA' },
+    { label: 'Episode 17',  title: "Destroyer",                            id: '1rYxMDRkAYCaDwPFj208exHD-0DpUpXCZ' },
+    { label: 'Episode 18',  title: "Memories of You",                      id: '1ztxoA6_M03mwa7ZdaEwH3BLgy6uEzq-6' },
+    { label: 'Episode 19',  title: "Destruction and Salvation",            id: '1YQ4ZGFRJcFFOziHP7ryG60n-5vrGi-Hg' },
+    { label: 'Episode 20',  title: "Assembly at the Royal Capital",        id: '1003yUZefJmhm5v-bn42cq-cFcBUf1Kmr' },
+    { label: 'Episode 21',  title: "Capital Riot",                         id: '1nypsdMPqKhxxxCl2USI6wyjwSKQftTIE' },
+    { label: 'Episode 22',  title: "The Quest for Capital Riot",           id: '1fzC5f1wbf9sOoAqkiLy27fHo5FhXYRzz' },
+    { label: 'Episode 23',  title: "The Crimson Lion King",                id: '1_gjJJTzLBx9CuyI6VPsvhYlcbNpOs1Sj' },
+    { label: 'Episode 24',  title: "Blackout",                             id: '1h2pwCmJOZrFb5NExrcI9Pcqk-jPaqbt_' },
+    { label: 'Episode 25',  title: "Adversity",                            id: '1vTQSO6mHoZk7KQks492SP2wtjo2FNkQ2' },
+    { label: 'Episode 26',  title: "The Raid",                             id: '1W5kCnkiEDYukoO-WlAtehgl3UT6zfNxh' },
+    { label: 'Episode 27',  title: "Light Magic vs. Dark Magic",           id: '1fP_kt8_ywPyBqBD8XFNz-qHctT_Kmmp9' },
+    { label: 'Episode 28',  title: "The Path to the Pinnacle",             id: '1b2JG173FBkXSAkxjEe0JcmNncFF9RSjX ' },
+    { label: 'Episode 29',  title: "Episode 29",                           id: '1rcgXAd_u4LQvGD85NG6L_ZZRvOPipj1w' },
+    { label: 'Episode 30',  title: "Episode 30",                           id: '1GQHpieshRv08iTudhfadLTmQG_kX_81U' },
+    { label: 'Episode 31',  title: "Episode 31",                           id: '1RqxE4C7LSFc72aBbK0ppRc-T9F8D0yFf' },
+    { label: 'Episode 32',  title: "Episode 32",                           id: '11ycaToQ2TkcVKYUf12bIoVbeEXOgBtCK' },
+    { label: 'Episode 33',  title: "Episode 33",                           id: '1ajj0gp3xN7RAtzWEq52D7Rs4c3wvOy00' },
+    { label: 'Episode 34',  title: "Episode 34",                           id: '1F8uGpwolBcLbOCt_jxpoOchkNUZ0XtZn' },
+    { label: 'Episode 35',  title: "Episode 35",                           id: '1EN5IN9hanwbucivZ3r1BJMKgd7P41Uz4' },
+    { label: 'Episode 36',  title: "Episode 36",                           id: '18jjQ3Py9q21RgcNIhizg5OyiLKfL_dfh' },
+    { label: 'Episode 37',  title: "Episode 37",                           id: '1yW2bL2XUI3VKsSQ8Ou470-_n8xtNUzNb' },
+    { label: 'Episode 38',  title: "Episode 38",                           id: '1KJCh59lzcBtqf_SO4vPp98ZI-LniccoH' },
+    { label: 'Episode 39',  title: "Episode 39",                           id: '1qVKRg0rlQJD0KMX1C6P8OE7jvjG9UlRe' },
+    { label: 'Episode 40',  title: "Episode 40",                           id: '1Q9NmlAQa1TrAHIjie25ZDMcZDa-YQYuP' },
+    { label: 'Episode 41',  title: "Episode 41",                           id: '1DWbmje2Cut4kT2jY8WESexI1O4_34SRt' },
+    { label: 'Episode 42',  title: "Episode 42",                           id: '1VB9SLseNLbVSwx5lY-_GuT_iCJj0Z7JL' },
+    { label: 'Episode 43',  title: "Episode 43",                           id: '1z6HKS_v7naEfR71bDJf1O1Imvs-zz7Je' },
+    { label: 'Episode 44',  title: "Episode 44",                           id: '1w0cN11PbFkwaNHTjjyJNapjziAgTkaDh' },
+    { label: 'Episode 45',  title: "Episode 45",                           id: '191g0h7XyX-62N4xODG4WYwB1gnaFqEPl' },
+    { label: 'Episode 46',  title: "Episode 46",                           id: '1o9afwUp92Q18mSyHH6MPzNlselTNKvGx' },
+    { label: 'Episode 47',  title: "Episode 47",                           id: '15kICb1pFve39YVBaPz4xmDzAzr6nMhFi' },
+    { label: 'Episode 48',  title: "Episode 48",                           id: '13fcKTHnzJXK2BI83XcnaROCqIEAhhWLm' },
+    { label: 'Episode 49',  title: "Episode 49",                           id: '1zWOemoixFibdqLj236k2VJsVxp9vYJTT' },
+    { label: 'Episode 50',  title: "Episode 50",                           id: '19eNcGR957ftd28TEfy8--QZLz8u13Xa3' },
+    { label: 'Episode 51',  title: "Episode 51",                           id: '1IVCrdZCVjt_2vN_iQzRdhMXT2vHn7FC3' },
+    { label: 'Episode 52',  title: "Episode 52",                           id: '' },
+    { label: 'Episode 53',  title: "Episode 53",                           id: '' },
+    { label: 'Episode 54',  title: "Episode 54",                           id: '' },
+    { label: 'Episode 55',  title: "Episode 55",                           id: '' },
+    { label: 'Episode 56',  title: "Episode 56",                           id: '' },
+    { label: 'Episode 57',  title: "Episode 57",                           id: '' },
+    { label: 'Episode 58',  title: "Episode 58",                           id: '' },
+    { label: 'Episode 59',  title: "Episode 59",                           id: '' },
+    { label: 'Episode 60',  title: "Episode 60",                           id: '' },
+    { label: 'Episode 61',  title: "Episode 61",                           id: '' },
+    { label: 'Episode 62',  title: "Episode 62",                           id: '' },
+    { label: 'Episode 63',  title: "Episode 63",                           id: '' },
+    { label: 'Episode 64',  title: "Episode 64",                           id: '' },
+    { label: 'Episode 65',  title: "Episode 65",                           id: '' },
+    { label: 'Episode 66',  title: "Episode 66",                           id: '' },
+    { label: 'Episode 67',  title: "Episode 67",                           id: '' },
+    { label: 'Episode 68',  title: "Episode 68",                           id: '' },
+    { label: 'Episode 69',  title: "Episode 69",                           id: '' },
+    { label: 'Episode 70',  title: "Episode 70",                           id: '' },
+    { label: 'Episode 71',  title: "Episode 71",                           id: '' },
+    { label: 'Episode 72',  title: "Episode 72",                           id: '' },
+    { label: 'Episode 73',  title: "Episode 73",                           id: '' },
+    { label: 'Episode 74',  title: "Episode 74",                           id: '' },
+    { label: 'Episode 75',  title: "Episode 75",                           id: '' },
+    { label: 'Episode 76',  title: "Episode 76",                           id: '' },
+    { label: 'Episode 77',  title: "Episode 77",                           id: '' },
+    { label: 'Episode 78',  title: "Episode 78",                           id: '' },
+    { label: 'Episode 79',  title: "Episode 79",                           id: '' },
+    { label: 'Episode 80',  title: "Episode 80",                           id: '' },
+    { label: 'Episode 81',  title: "Episode 81",                           id: '' },
+    { label: 'Episode 82',  title: "Episode 82",                           id: '' },
+    { label: 'Episode 83',  title: "Episode 83",                           id: '' },
+    { label: 'Episode 84',  title: "Episode 84",                           id: '' },
+    { label: 'Episode 85',  title: "Episode 85",                           id: '' },
+    { label: 'Episode 86',  title: "Episode 86",                           id: '' },
+    { label: 'Episode 87',  title: "Episode 87",                           id: '' },
+    { label: 'Episode 88',  title: "Episode 88",                           id: '' },
+    { label: 'Episode 89',  title: "Episode 89",                           id: '' },
+    { label: 'Episode 90',  title: "Episode 90",                           id: '' },
+    { label: 'Episode 91',  title: "Episode 91",                           id: '' },
+    { label: 'Episode 92',  title: "Episode 92",                           id: '' },
+    { label: 'Episode 93',  title: "Episode 93",                           id: '' },
+    { label: 'Episode 94',  title: "Episode 94",                           id: '' },
+    { label: 'Episode 95',  title: "Episode 95",                           id: '' },
+    { label: 'Episode 96',  title: "Episode 96",                           id: '' },
+    { label: 'Episode 97',  title: "Episode 97",                           id: '' },
+    { label: 'Episode 98',  title: "Episode 98",                           id: '' },
+    { label: 'Episode 99',  title: "Episode 99",                           id: '' },
+    { label: 'Episode 100', title: "Episode 100",                          id: '' },
+    { label: 'Episode 101', title: "Episode 101",                          id: '' },
+    { label: 'Episode 102', title: "Episode 102",                          id: '' },
+    { label: 'Episode 103', title: "Episode 103",                          id: '' },
+    { label: 'Episode 104', title: "Episode 104",                          id: '' },
+    { label: 'Episode 105', title: "Episode 105",                          id: '' },
+    { label: 'Episode 106', title: "Episode 106",                          id: '' },
+    { label: 'Episode 107', title: "Episode 107",                          id: '' },
+    { label: 'Episode 108', title: "Episode 108",                          id: '' },
+    { label: 'Episode 109', title: "Episode 109",                          id: '' },
+    { label: 'Episode 110', title: "Episode 110",                          id: '' },
+    { label: 'Episode 111', title: "Episode 111",                          id: '' },
+    { label: 'Episode 112', title: "Episode 112",                          id: '' },
+    { label: 'Episode 113', title: "Episode 113",                          id: '' },
+    { label: 'Episode 114', title: "Episode 114",                          id: '' },
+    { label: 'Episode 115', title: "Episode 115",                          id: '' },
+    { label: 'Episode 116', title: "Episode 116",                          id: '' },
+    { label: 'Episode 117', title: "Episode 117",                          id: '' },
+    { label: 'Episode 118', title: "Episode 118",                          id: '' },
+    { label: 'Episode 119', title: "Episode 119",                          id: '' },
+    { label: 'Episode 120', title: "Episode 120",                          id: '' },
+    { label: 'Episode 121', title: "Episode 121",                          id: '' },
+    { label: 'Episode 122', title: "Episode 122",                          id: '' },
+    { label: 'Episode 123', title: "Episode 123",                          id: '' },
+    { label: 'Episode 124', title: "Episode 124",                          id: '' },
+    { label: 'Episode 125', title: "Episode 125",                          id: '' },
+    { label: 'Episode 126', title: "Episode 126",                          id: '' },
+    { label: 'Episode 127', title: "Episode 127",                          id: '' },
+    { label: 'Episode 128', title: "Episode 128",                          id: '' },
+    { label: 'Episode 129', title: "Episode 129",                          id: '' },
+    { label: 'Episode 130', title: "Episode 130",                          id: '' },
+    { label: 'Episode 131', title: "Episode 131",                          id: '' },
+    { label: 'Episode 132', title: "Episode 132",                          id: '' },
+    { label: 'Episode 133', title: "Episode 133",                          id: '' },
+    { label: 'Episode 134', title: "Episode 134",                          id: '' },
+    { label: 'Episode 135', title: "Episode 135",                          id: '' },
+    { label: 'Episode 136', title: "Episode 136",                          id: '' },
+    { label: 'Episode 137', title: "Episode 137",                          id: '' },
+    { label: 'Episode 138', title: "Episode 138",                          id: '' },
+    { label: 'Episode 139', title: "Episode 139",                          id: '' },
+    { label: 'Episode 140', title: "Episode 140",                          id: '' },
+    { label: 'Episode 141', title: "Episode 141",                          id: '' },
+    { label: 'Episode 142', title: "Episode 142",                          id: '' },
+    { label: 'Episode 143', title: "Episode 143",                          id: '' },
+    { label: 'Episode 144', title: "Episode 144",                          id: '' },
+    { label: 'Episode 145', title: "Episode 145",                          id: '' },
+    { label: 'Episode 146', title: "Episode 146",                          id: '' },
+    { label: 'Episode 147', title: "Episode 147",                          id: '' },
+    { label: 'Episode 148', title: "Episode 148",                          id: '' },
+    { label: 'Episode 149', title: "Episode 149",                          id: '' },
+    { label: 'Episode 150', title: "Episode 150",                          id: '' },
+    { label: 'Episode 151', title: "Episode 151",                          id: '' },
+    { label: 'Episode 152', title: "Episode 152",                          id: '' },
+    { label: 'Episode 153', title: "Episode 153",                          id: '' },
+    { label: 'Episode 154', title: "Episode 154",                          id: '' },
+    { label: 'Episode 155', title: "Episode 155",                          id: '' },
+    { label: 'Episode 156', title: "Episode 156",                          id: '' },
+    { label: 'Episode 157', title: "Episode 157",                          id: '' },
+    { label: 'Episode 158', title: "Episode 158",                          id: '' },
+    { label: 'Episode 159', title: "Episode 159",                          id: '' },
+    { label: 'Episode 160', title: "Episode 160",                          id: '' },
+    { label: 'Episode 161', title: "Episode 161",                          id: '' },
+    { label: 'Episode 162', title: "Episode 162",                          id: '' },
+    { label: 'Episode 163', title: "Episode 163",                          id: '' },
+    { label: 'Episode 164', title: "Episode 164",                          id: '' },
+    { label: 'Episode 165', title: "Episode 165",                          id: '' },
+    { label: 'Episode 166', title: "Episode 166",                          id: '' },
+    { label: 'Episode 167', title: "Episode 167",                          id: '' },
+    { label: 'Episode 168', title: "Episode 168",                          id: '' },
+    { label: 'Episode 169', title: "Episode 169",                          id: '' },
+    { label: 'Episode 170', title: "Episode 170",                          id: '' },
+  ],
+};
+
+/* ── URL helpers ── */
+function streamUrl(id)   { return `https://drive.google.com/file/d/${id}/preview`; }
+function downloadUrl(id) { return `https://drive.google.com/uc?export=download&id=${id}`; }
+function driveUrl(id)    { return `https://drive.google.com/file/d/${id}/view`; }
+
+/* ── Build flat playlist ── */
+let playlist = [];
+Object.entries(SEASONS).forEach(([s, eps]) => {
+  eps.forEach((ep, i) => {
+    playlist.push({ ...ep, season: +s, epNum: i + 1, globalIndex: playlist.length });
+  });
+});
+
+const playable = playlist.filter(e => e.id);
+
+let currentIndex = 0;
+
+/* ── Render episode cards ── */
+function renderEpisodes(season, filter = '') {
+  const grid = document.getElementById(`epGrid${season}`);
+  const eps  = SEASONS[season];
+  const q    = filter.toLowerCase();
+  grid.innerHTML = '';
+
+  eps.forEach((ep, i) => {
+    if (q && !ep.label.toLowerCase().includes(q) && !ep.title.toLowerCase().includes(q)) return;
+
+    const globalIdx = playlist.findIndex(p => p.season === season && p.epNum === i + 1);
+    const hasVideo  = !!ep.id;
+
+    const card = document.createElement('div');
+    card.className = 'ep-card' + (hasVideo ? '' : ' ep-no-src');
+    card.dataset.index = globalIdx;
+
+    card.innerHTML = `
+      <div class="ep-thumb">
+        <div class="ep-play-icon">${hasVideo ? '▶' : '🕐'}</div>
+        <span class="ep-num">S${season}E${i+1}</span>
+      </div>
+      <div class="ep-info" style="padding-right:${hasVideo ? '44px' : '8px'}">
+        <p class="ep-label">${ep.label}${!hasVideo ? '<span class="ep-badge-soon">Soon</span>' : ''}</p>
+        <p class="ep-title">${ep.title}</p>
+      </div>
+      ${hasVideo ? `<a class="ep-dl-btn" href="${downloadUrl(ep.id)}" data-drive-id="${ep.id}" download
+        title="Download ${ep.label}" onclick="event.stopPropagation()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+        </svg></a>` : ''}`;
+
+    if (hasVideo) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => openPlayer(globalIdx));
+    }
+
+    grid.appendChild(card);
+  });
+}
+
+renderEpisodes(1);
+
+/* ── Set download link on hero button ── */
+const firstEp = SEASONS[1][0];
+if (firstEp.id) {
+  document.getElementById('downloadFirstBtn').href = downloadUrl(firstEp.id);
+  document.getElementById('downloadFirstBtn').dataset.driveId = firstEp.id;
+}
+
+/* ── Season tabs ── */
+let activeSeason = 1;
+document.getElementById('seasonSwitcher').addEventListener('click', e => {
+  const btn = e.target.closest('.season-tab-btn');
+  if (!btn) return;
+  const s = +btn.dataset.season;
+  if (s === activeSeason) return;
+  activeSeason = s;
+  document.querySelectorAll('.season-tab-btn').forEach(b => b.classList.toggle('active', +b.dataset.season === s));
+  document.querySelectorAll('.season-panel').forEach(p => p.classList.toggle('active', p.id === `season-panel-${s}`));
+});
+
+/* ── Episode search ── */
+document.getElementById('epSearch1').addEventListener('input', e => renderEpisodes(1, e.target.value));
+
+/* ── Video Player ── */
+const videoModal   = document.getElementById('videoModal');
+const videoPlayer  = document.getElementById('videoPlayer');
+const videoIframe  = document.getElementById('videoIframe');
+const videoWrap    = document.getElementById('videoWrap');
+const videoLoading = document.getElementById('videoLoading');
+const videoError   = document.getElementById('videoError');
+const videoEpName  = document.getElementById('videoEpName');
+const videoEpCtr   = document.getElementById('videoEpCounter');
+const btnPrev      = document.getElementById('btnPrev');
+const btnNext      = document.getElementById('btnNext');
+const btnDownload  = document.getElementById('btnDownload');
+const errOpenDrive = document.getElementById('errOpenDrive');
+
+function openPlayer(globalIdx) {
+  const ep = playlist[globalIdx];
+  if (!ep || !ep.id) return;
+  currentIndex = globalIdx;
+  videoModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  loadEpisode(ep);
+  updateControls();
+}
+
+function loadEpisodeLegacy(ep) {
+  videoLoading.style.display = 'flex';
+  videoError.style.display   = 'none';
+  videoPlayer.style.display  = 'none';
+  videoIframe.style.display  = 'none';
+  try { videoPlayer.pause(); } catch(e){}
+  try { videoPlayer.removeAttribute('src'); videoPlayer.load(); } catch(e){}
+
+  videoEpName.textContent = `S${ep.season} · ${ep.label} — ${ep.title}`;
+  videoEpCtr.textContent  = `${ep.globalIndex + 1} / ${playlist.length}`;
+
+  btnDownload.href         = downloadUrl(ep.id);
+  btnDownload.dataset.driveId = ep.id;
+  btnDownload.setAttribute('download', `Black-Clover-S${ep.season}-${ep.label}.mp4`);
+  errOpenDrive.href        = driveUrl(ep.id);
+
+  const src = downloadUrl(ep.id);
+  videoPlayer.src = src;
+  videoPlayer.style.display = 'block';
+
+  videoPlayer.oncanplay = () => {
+    videoLoading.style.display = 'none';
+    videoError.style.display   = 'none';
+  };
+
+  videoPlayer.onerror = () => {
+    videoLoading.style.display = 'none';
+    videoPlayer.style.display  = 'none';
+    const iframeSrc = streamUrl(ep.id);
+    videoIframe.src = iframeSrc;
+    videoIframe.style.display = 'block';
+    let iframeTimeout = setTimeout(() => {
+      if (videoIframe.style.display === 'block') {
+        videoIframe.style.display = 'none';
+        videoError.style.display = 'flex';
+      }
+    }, 5000);
+    videoIframe.onload = () => { clearTimeout(iframeTimeout); videoError.style.display = 'none'; };
+  };
+
+  let fallback = setTimeout(() => {
+    if (videoLoading.style.display !== 'none') {
+      videoLoading.style.display = 'none';
+      videoPlayer.style.display  = 'block';
+    }
+  }, 5000);
+
+  videoPlayer.addEventListener('canplay', () => clearTimeout(fallback), { once: true });
+
+  document.querySelectorAll('.ep-card').forEach(c => {
+    c.classList.toggle('playing', +c.dataset.index === currentIndex);
+  });
+}
+
+function loadEpisode(ep) {
+  videoLoading.style.display = 'flex';
+  videoError.style.display   = 'none';
+  videoPlayer.style.display  = 'none';
+  videoIframe.style.display  = 'none';
+  try { videoPlayer.pause(); } catch(e){}
+  try { videoPlayer.removeAttribute('src'); videoPlayer.load(); } catch(e){}
+  try { videoIframe.removeAttribute('src'); } catch(e){}
+
+  videoEpName.textContent = `S${ep.season} - ${ep.label} - ${ep.title}`;
+  videoEpCtr.textContent  = `${ep.globalIndex + 1} / ${playlist.length}`;
+
+  btnDownload.href         = downloadUrl(ep.id);
+  btnDownload.dataset.driveId = ep.id;
+  btnDownload.setAttribute('download', `Black-Clover-S${ep.season}-${ep.label}.mp4`);
+  errOpenDrive.href        = driveUrl(ep.id);
+
+  const iframeSrc = streamUrl(ep.id);
+  let iframeLoaded = false;
+  const iframeTimeout = setTimeout(() => {
+    if (!iframeLoaded) {
+      videoIframe.style.display = 'none';
+      videoError.style.display = 'flex';
+    }
+  }, 12000);
+
+  videoIframe.onload = () => {
+    iframeLoaded = true;
+    clearTimeout(iframeTimeout);
+    videoLoading.style.display = 'none';
+    videoError.style.display   = 'none';
+  };
+
+  videoIframe.src = iframeSrc;
+  videoIframe.style.display = 'block';
+
+  document.querySelectorAll('.ep-card').forEach(c => {
+    c.classList.toggle('playing', +c.dataset.index === currentIndex);
+  });
+}
+
+function updateControls() {
+  const prevPlayable = playlist.slice(0, currentIndex).reverse().find(e => e.id);
+  const nextPlayable = playlist.slice(currentIndex + 1).find(e => e.id);
+  btnPrev.disabled = !prevPlayable;
+  btnNext.disabled = !nextPlayable;
+}
+
+document.getElementById('videoClose').addEventListener('click', () => {
+  videoModal.classList.remove('open');
+  document.body.style.overflow = '';
+  try { videoPlayer.pause(); } catch(e){}
+  try { videoPlayer.removeAttribute('src'); videoPlayer.load(); } catch(e){}
+  try { videoIframe.removeAttribute('src'); videoIframe.style.display = 'none'; } catch(e){}
+});
+
+btnPrev.addEventListener('click', () => {
+  const prev = playlist.slice(0, currentIndex).reverse().find(e => e.id);
+  if (prev) { currentIndex = prev.globalIndex; loadEpisode(prev); updateControls(); }
+});
+
+btnNext.addEventListener('click', () => {
+  const next = playlist.slice(currentIndex + 1).find(e => e.id);
+  if (next) { currentIndex = next.globalIndex; loadEpisode(next); updateControls(); }
+});
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e => {
+  if (!videoModal.classList.contains('open')) return;
+  if (e.key === 'Escape')      document.getElementById('videoClose').click();
+  if (e.key === 'ArrowRight')  btnNext.click();
+  if (e.key === 'ArrowLeft')   btnPrev.click();
+  if (e.key === ' ')           { e.preventDefault(); if (videoPlayer.style.display !== 'none') { videoPlayer.paused ? videoPlayer.play() : videoPlayer.pause(); } }
+});
+
+// Swipe navigation
+let touchStartX = 0;
+videoModal.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
+videoModal.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(dx) < 70) return;
+  if (dx < 0) btnNext.click(); else btnPrev.click();
+}, {passive:true});
+
+// Watch Ep 1 button
+document.getElementById('watchFirstBtn').addEventListener('click', () => {
+  const first = playlist.find(e => e.id);
+  if (first) openPlayer(first.globalIndex);
+});
+
+/* ── Theme ── */
+const root = document.documentElement;
+const themeBtn = document.getElementById('themeToggle');
+const saved = localStorage.getItem('theme') || 'dark';
+root.setAttribute('data-theme', saved);
+themeBtn.textContent = saved === 'dark' ? '🌙' : '☀️';
+themeBtn.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  themeBtn.textContent = next === 'dark' ? '🌙' : '☀️';
+  localStorage.setItem('theme', next);
+});
+
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+/* ── Share ── */
+const SITE_URL  = 'https://ani-tamil.me/BLACK-CLOVER.html';
+const SITE_TEXT = '🎌 Watch Black Clover in Tamil — Free on αηιмєѕ தமிழ்!';
+const shareModal = document.getElementById('shareModal');
+
+function openShareModal() { shareModal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeShareModal() { shareModal.classList.remove('open'); document.body.style.overflow = ''; }
+
+['openShareNav','openShareHero'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('click', openShareModal);
+});
+shareModal.addEventListener('click', e => { if (e.target === shareModal) closeShareModal(); });
+
+function shareWhatsApp()  { window.open(`https://wa.me/?text=${encodeURIComponent(SITE_TEXT+' '+SITE_URL)}`,'_blank'); }
+function shareTelegram()  { window.open(`https://t.me/share/url?url=${encodeURIComponent(SITE_URL)}&text=${encodeURIComponent(SITE_TEXT)}`,'_blank'); }
+function shareTwitter()   { window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(SITE_TEXT)}&url=${encodeURIComponent(SITE_URL)}`,'_blank'); }
+function shareFacebook()  { window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE_URL)}`,'_blank'); }
+function shareReddit()    { window.open(`https://reddit.com/submit?url=${encodeURIComponent(SITE_URL)}&title=${encodeURIComponent(SITE_TEXT)}`,'_blank'); }
+function shareEmail()     { window.open(`mailto:?subject=${encodeURIComponent('Black Clover Tamil')}&body=${encodeURIComponent(SITE_TEXT+'\n\n'+SITE_URL)}`); }
+function shareNative()    { if(navigator.share) navigator.share({title:'Black Clover Tamil',text:SITE_TEXT,url:SITE_URL}); else copyLink(); }
+function copyLink()       { navigator.clipboard.writeText(SITE_URL).then(()=>showToast('Link copied! 🔗')); }
+
+const toastEl = document.getElementById('toast');
+let toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2400);
+}
+
+// ── Download handler ──
+async function downloadDriveById(id, filename) {
+  const url = downloadUrl(id);
+  showToast('Preparing download...');
+  try {
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error('Network error');
+    const blob = await resp.blob();
+    const a = document.createElement('a');
+    const objUrl = URL.createObjectURL(blob);
+    a.href = objUrl;
+    a.download = filename || `Black-Clover-${id}.mp4`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(objUrl);
+    showToast('Download started');
+  } catch (err) {
+    window.open(url, '_blank', 'noopener');
+  }
+}
+
+document.addEventListener('click', e => {
+  const dl = e.target.closest('.ep-dl-btn, .ctrl-download, #downloadFirstBtn');
+  if (!dl) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const id = dl.dataset.driveId || (new URL(dl.href, location.href).searchParams.get('id'));
+  const filename = dl.getAttribute('download') || `${document.title.replace(/\s+/g,'-')}-${id}.mp4`;
+  if (!id) { showToast('File not available'); return; }
+  downloadDriveById(id, filename);
+});
+</script>
+</body>
+</html>

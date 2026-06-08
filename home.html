@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Anime — αηιмєѕ தமிழ்</title>
+  <meta name="description" content="Browse all Tamil dubbed and subbed anime on αηιмєѕ தமிழ். Free streaming." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="home-style.css" />
+</head>
+<body>
+
+<!-- ── Navbar ── -->
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo-emoji">⚔️</div>
+    <div class="nav-title">
+      αηιмєѕ தமிழ்
+      <span>Tamil Anime Hub</span>
+    </div>
+  </a>
+  <div class="nav-spacer"></div>
+  <div class="nav-actions">
+    <a href="index.html" class="nav-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
+    </a>
+    <button class="nav-btn" id="openShare">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      <span>Share</span>
+    </button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+<!-- ── Page Hero (compact) ── -->
+<div class="home-hero">
+  <div class="container">
+    <h1 class="home-hero-title fade-up">Anime Library</h1>
+    <p class="home-hero-sub fade-up delay-1">Tamil dubbed & subbed • Free • Always growing</p>
+    <!-- Search -->
+    <div class="search-wrap fade-up delay-2">
+      <div class="search-bar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search anime..." autocomplete="off" />
+        <button class="search-clear" id="searchClear" aria-label="Clear">✕</button>
+      </div>
+      <p class="search-no-results" id="searchNoResults">No results found. Try a different name.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── Filter Tabs ── -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-tabs" id="filterTabs">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="dubbed">Tamil Dubbed</button>
+      <button class="filter-tab" data-filter="subbed">Tamil Subbed</button>
+      <button class="filter-tab" data-filter="action">Action</button>
+      <button class="filter-tab" data-filter="fantasy">Fantasy</button>
+      <button class="filter-tab" data-filter="sports">Sports</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Anime Grid ── -->
+<main class="home-main">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Available Now</h2>
+        <p class="section-sub" id="animeCount">Loading...</p>
+      </div>
+    </div>
+
+    <div class="anime-grid" id="animeGrid">
+      <!-- Cards injected by JS -->
+    </div>
+
+    <!-- Coming Soon -->
+    <div class="section-header" style="margin-top:52px;">
+      <div>
+        <h2 class="section-title">Coming Soon</h2>
+        <p class="section-sub">These are being prepared — stay tuned!</p>
+      </div>
+    </div>
+    <div class="anime-grid" id="comingSoonGrid">
+    </div>
+  </div>
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-brand">αηιмєѕ தமிழ்</div>
+  <p class="footer-desc">Free Tamil anime streaming — dubbed & subbed. No ads, no subscriptions.</p>
+  <div class="footer-links">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="home.html" class="footer-link">Browse</a>
+    <button class="footer-link" onclick="openShareModal()" style="background:none;cursor:pointer;">Share</button>
+  </div>
+  <div class="footer-copy">
+    © <span id="footerYear"></span> <span>αηιмєѕ தமிழ்</span>. All rights reserved. Anime content belongs to their respective creators and studios. Fan-made, non-commercial project.
+  </div>
+</footer>
+
+<!-- ── Share Modal ── -->
+<div class="modal-overlay" id="shareModal" role="dialog">
+  <div class="share-sheet">
+    <div class="share-handle"></div>
+    <p class="share-title">Share αηιмєѕ தமிழ்</p>
+    <div class="share-grid">
+      <button class="share-btn" onclick="shareWhatsApp()"><span class="share-icon">💬</span>WhatsApp</button>
+      <button class="share-btn" onclick="shareTelegram()"><span class="share-icon">✈️</span>Telegram</button>
+      <button class="share-btn" onclick="shareTwitter()"><span class="share-icon">🐦</span>Twitter</button>
+      <button class="share-btn" onclick="shareFacebook()"><span class="share-icon">👍</span>Facebook</button>
+      <button class="share-btn" onclick="shareReddit()"><span class="share-icon">🤖</span>Reddit</button>
+      <button class="share-btn" onclick="shareEmail()"><span class="share-icon">📧</span>Email</button>
+      <button class="share-btn" onclick="shareNative()"><span class="share-icon">📤</span>More</button>
+      <button class="share-btn" onclick="copyLink()"><span class="share-icon">🔗</span>Copy</button>
+    </div>
+    <div class="share-copy-row">
+      <span class="share-copy-url">https://ani-tamil.me/</span>
+      <button class="share-copy-btn" onclick="copyLink()">Copy Link</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Toast ── -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* =====================================================
+   Anime Library Data
+   To add a new anime: add an object to ANIME_LIST.
+   Keys: id, title, poster, page, tags, genres, year, seasons, episodes, type
+   ===================================================== */
+const ANIME_LIST = [
+  {
+    id: 'solo-leveling',
+    title: 'Solo Leveling',
+    poster: 'sololeveling.jpg',
+    page: 'SOLO-LEVELING.html',
+    tags: ['dubbed'],
+    genres: ['action', 'fantasy'],
+    year: 2024,
+    seasons: 2,
+    episodes: 25,
+    type: 'dubbed',
+    desc: 'The weakest hunter rises to become the strongest.'
+  },
+  {
+    id: 'jujutsu-kaisen',
+    title: 'Jujutsu Kaisen',
+    poster: 'jjk.jpg',
+    page: 'JUJUTSU-KAISEN.html',
+    tags: ['dubbed'],
+    genres: ['action'],
+    year: 2020,
+    seasons: 3,
+    episodes: 47,
+    type: 'dubbed',
+    desc: 'A high school student battles cursed spirits.'
+  },
+  {
+    id: 'mha',
+    title: 'My Hero Academia',
+    poster: 'MHA.jpg',
+    page: 'MY-HERO-ACADEMIA.html',
+    tags: ['dubbed'],
+    genres: ['action'],
+    year: 2016,
+    seasons: 8,
+    episodes: 175,
+    type: 'dubbed',
+    desc: 'Izuku Midoriya becomes the greatest hero.'
+  },
+  {
+    id: 'blue-lock',
+    title: 'Blue Lock',
+    poster: 'bluelock.jpg',
+    page: 'BLUE-LOCK.html',
+    tags: ['dubbed'],
+    genres: ['sports'],
+    year: 2022,
+    seasons: 2,
+    episodes: 38,
+    type: 'dubbed',
+    desc: '300 strikers compete to become Japan\'s ace.'
+  },
+  {
+    id: 'haikyuu',
+    title: 'Haikyuu!!',
+    poster: 'haikyuu.jpg',
+    page: 'HAIKYUU.html',
+    tags: ['dubbed'],
+    genres: ['sports'],
+    year: 2014,
+    seasons: 4,
+    episodes: 73,
+    type: 'dubbed',
+    desc: 'A short boy chases his volleyball dream.'
+  },
+  {
+    id: 'black-clover',
+    title: 'Black Clover',
+    poster: 'BlackClover.jpg',
+    page: 'BLACK-CLOVER.html',
+    tags: ['dubbed'],
+    genres: ['action', 'fantasy'],
+    year: 2017,
+    seasons: 1,
+    episodes: 51,
+    type: 'dubbed',
+    desc: 'Asta, born without magic, aims to be the Wizard King.'
+  },
+  {
+    id: 'dr-stone',
+    title: 'Dr. Stone',
+    poster: 'Drstone.jpg',
+    page: 'DR-STONE.html',
+    tags: ['dubbed'],
+    genres: ['action', 'fantasy'],
+    year: 2019,
+    seasons: 4,
+    episodes: 86,
+    type: 'dubbed',
+    desc: 'Senku rebuilds civilization using science.'
+  },
+  {
+    id: 'kaiju-no-8',
+    title: 'Kaiju No. 8',
+    poster: 'kaiju.jpg',
+    page: 'KAIJU-No-8.html',
+    tags: ['dubbed'],
+    genres: ['action'],
+    year: 2024,
+    seasons: 2,
+    episodes: 23,
+    type: 'dubbed',
+    desc: 'A man transforms into a monster to protect humanity.'
+  },
+  {
+    id: 'gohs',
+    title: 'The God of High School',
+    poster: 'GOHS.jpg',
+    page: 'THE-GOD-OF-HIGH-SCHOOL.html',
+    tags: ['dubbed'],
+    genres: ['action'],
+    year: 2020,
+    seasons: 1,
+    episodes: 13,
+    type: 'dubbed',
+    desc: 'The ultimate high school martial arts tournament.'
+  },
+  {
+    id: 'karna',
+    title: 'Karna: The Guardian',
+    poster: 'karna.jpg',
+    page: 'KARNA-THE-GUARDIAN.html',
+    tags: ['dubbed'],
+    genres: ['action', 'fantasy'],
+    year: 2024,
+    seasons: 1,
+    episodes: 12,
+    type: 'dubbed',
+    desc: 'Tamil mythology meets anime action.'
+  },
+  {
+    id: 'tbhx',
+    title: 'To Be Hero X',
+    poster: 'tbhx.png',
+    page: 'TO-BE-HERO-X.html',
+    tags: ['dubbed'],
+    genres: ['action'],
+    year: 2024,
+    seasons: 1,
+    episodes: 12,
+    type: 'dubbed',
+    desc: 'A young hero discovers his hidden powers.'
+  },
+];
+
+const COMING_SOON = [
+  { title: 'Demon Slayer', emoji: '🗡️', desc: 'Coming in Tamil Dub' },
+  { title: 'One Piece',    emoji: '🏴‍☠️', desc: 'Coming in Tamil Dub' },
+  { title: 'Naruto',      emoji: '🍥', desc: 'Coming Soon' },
+];
+
+/* ── Theme ── */
+const root = document.documentElement;
+const themeBtn = document.getElementById('themeToggle');
+const saved = localStorage.getItem('theme') || 'dark';
+root.setAttribute('data-theme', saved);
+themeBtn.textContent = saved === 'dark' ? '🌙' : '☀️';
+themeBtn.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  themeBtn.textContent = next === 'dark' ? '🌙' : '☀️';
+  localStorage.setItem('theme', next);
+});
+
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+/* ── Render cards ── */
+const grid = document.getElementById('animeGrid');
+const csGrid = document.getElementById('comingSoonGrid');
+const countEl = document.getElementById('animeCount');
+
+function renderCards(list) {
+  grid.innerHTML = '';
+  list.forEach((anime, i) => {
+    const card = document.createElement('a');
+    card.href = anime.page;
+    card.className = 'anime-card fade-up';
+    card.style.animationDelay = (i * 0.05) + 's';
+    card.dataset.title = anime.title.toLowerCase();
+    card.dataset.genres = anime.genres.join(' ');
+    card.dataset.type = anime.type;
+    card.innerHTML = `
+      <div style="overflow:hidden; aspect-ratio:2/3; position:relative;">
+        <img class="anime-card-poster" src="${anime.poster}"
+          alt="${anime.title}"
+          onerror="this.src='https://placehold.co/200x300/1e1e24/e63946?text=${encodeURIComponent(anime.title)}'"
+          loading="lazy" decoding="async"/>
+        <div class="card-overlay">
+          <span class="card-ep-count">${anime.episodes} Episodes</span>
+        </div>
+      </div>
+      <div class="anime-card-body">
+        <p class="anime-card-title">${anime.title}</p>
+        <p class="anime-card-meta">
+          <span>${anime.year}</span>
+          <span>·</span>
+          <span>S${anime.seasons}</span>
+        </p>
+        <div class="anime-card-tags">
+          ${anime.type === 'dubbed'
+            ? '<span class="badge badge-red">Tamil Dub</span>'
+            : '<span class="badge badge-gold">Tamil Sub</span>'}
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+  countEl.textContent = `${list.length} series available`;
+}
+
+function renderComingSoon() {
+  COMING_SOON.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'cs-card';
+    card.innerHTML = `
+      <div class="cs-poster">
+        <div class="cs-emoji">${item.emoji}</div>
+      </div>
+      <div class="anime-card-body">
+        <p class="anime-card-title">${item.title}</p>
+        <span class="badge badge-gold">🕐 ${item.desc}</span>
+      </div>`;
+    csGrid.appendChild(card);
+  });
+}
+
+renderCards(ANIME_LIST);
+renderComingSoon();
+
+/* ── Search ── */
+const searchInput = document.getElementById('searchInput');
+const searchClear = document.getElementById('searchClear');
+const noResults   = document.getElementById('searchNoResults');
+let activeFilter  = 'all';
+
+function applyFilters() {
+  const q = searchInput.value.toLowerCase().trim();
+  let filtered = ANIME_LIST;
+
+  if (activeFilter !== 'all') {
+    if (activeFilter === 'dubbed' || activeFilter === 'subbed') {
+      filtered = filtered.filter(a => a.type === activeFilter);
+    } else {
+      filtered = filtered.filter(a => a.genres.includes(activeFilter));
+    }
+  }
+
+  if (q) filtered = filtered.filter(a => a.title.toLowerCase().includes(q));
+
+  renderCards(filtered);
+  noResults.style.display = filtered.length === 0 ? 'block' : 'none';
+  searchClear.style.display = q ? 'flex' : 'none';
+}
+
+searchInput.addEventListener('input', applyFilters);
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  applyFilters();
+  searchInput.focus();
+});
+
+/* ── Filter tabs ── */
+document.getElementById('filterTabs').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-tab');
+  if (!btn) return;
+  document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = btn.dataset.filter;
+  applyFilters();
+});
+
+/* ── Share ── */
+const SITE_URL  = 'https://ani-tamil.me/';
+const SITE_TEXT = 'Watch Tamil anime for free! Dubbed & subbed in Tamil 🎌🇮🇳';
+const modal = document.getElementById('shareModal');
+
+function openShareModal() { modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeShareModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }
+
+document.getElementById('openShare').addEventListener('click', openShareModal);
+modal.addEventListener('click', e => { if (e.target === modal) closeShareModal(); });
+
+function shareWhatsApp()  { window.open(`https://wa.me/?text=${encodeURIComponent(SITE_TEXT + ' ' + SITE_URL)}`,'_blank'); }
+function shareTelegram()  { window.open(`https://t.me/share/url?url=${encodeURIComponent(SITE_URL)}&text=${encodeURIComponent(SITE_TEXT)}`,'_blank'); }
+function shareTwitter()   { window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(SITE_TEXT)}&url=${encodeURIComponent(SITE_URL)}`,'_blank'); }
+function shareFacebook()  { window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE_URL)}`,'_blank'); }
+function shareReddit()    { window.open(`https://reddit.com/submit?url=${encodeURIComponent(SITE_URL)}&title=${encodeURIComponent(SITE_TEXT)}`,'_blank'); }
+function shareEmail()     { window.open(`mailto:?subject=${encodeURIComponent('Tamil Anime Free Streaming')}&body=${encodeURIComponent(SITE_TEXT+'\n\n'+SITE_URL)}`); }
+function shareNative()    { if(navigator.share) navigator.share({title:'αηιмєѕ தமிழ்',text:SITE_TEXT,url:SITE_URL}); else copyLink(); }
+function copyLink()       { navigator.clipboard.writeText(SITE_URL).then(()=>showToast('Link copied! 🔗')); }
+
+const toastEl = document.getElementById('toast');
+let toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2400);
+}
+</script>
+</body>
+</html>
