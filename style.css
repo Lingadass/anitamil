@@ -108,6 +108,10 @@ button { cursor: pointer; font-family: var(--font-body); }
   height: 34px;
   border-radius: 9px;
   object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid rgba(230, 57, 70, 0.55);
+  background: #050505;
+  box-shadow: 0 0 18px rgba(230, 57, 70, 0.22);
 }
 
 .nav-title {
@@ -115,7 +119,7 @@ button { cursor: pointer; font-family: var(--font-body); }
   font-size: 1.15rem;
   font-weight: 800;
   color: var(--text);
-  letter-spacing: -0.3px;
+  letter-spacing: 0;
   line-height: 1;
 }
 

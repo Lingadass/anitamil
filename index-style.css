@@ -334,9 +334,14 @@
   justify-content: center;
 }
 
-.about-center-emoji {
-  font-size: 5rem;
-  text-align: center;
+.about-center-logo {
+  width: 112px;
+  height: 112px;
+  border-radius: 18px;
+  object-fit: cover;
+  border: 1px solid rgba(230, 57, 70, 0.55);
+  background: #050505;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.24), 0 0 30px rgba(230, 57, 70, 0.28);
   animation: floatB 3s ease-in-out infinite;
 }
 
